@@ -2,6 +2,7 @@ node_modules
 
 .cache
 .vercel
+.DS_Store
 
 public/build
 api/_build

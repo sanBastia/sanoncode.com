@@ -1,5 +1,8 @@
 import type { MetaFunction, LoaderFunction } from "remix";
 import { useLoaderData, json, Link } from "remix";
+import { Button } from '@mantine/core';
+
+
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>;
@@ -49,8 +52,8 @@ export let loader: LoaderFunction = () => {
 // https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
   return {
-    title: "Remix Starter",
-    description: "Welcome to remix!"
+    title: "Sanoncode",
+    description: "San Sebastian personal website"
   };
 };
 
@@ -62,7 +65,7 @@ export default function Index() {
     <div className="remix__page">
       <main>
         <h2>Welcome to Remix!</h2>
-        <p>We're stoked that you're here. 🥳</p>
+        <Button>Hello world</Button>
         <p>
           Feel free to take a look around the code to see how Remix does things,
           it might be a bit different than what you’re used to. When you're

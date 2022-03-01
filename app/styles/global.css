@@ -214,3 +214,8 @@ input:where([type="search"]) {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.hero {
+  display: flex;
+  gap: 2rem;
+}

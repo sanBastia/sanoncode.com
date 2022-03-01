@@ -1,8 +1,6 @@
 import type { MetaFunction, LoaderFunction } from "remix";
 import { useLoaderData, json, Link } from "remix";
-import { Button } from '@mantine/core';
-
-
+import { Button } from "@mantine/core";
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>;
@@ -18,31 +16,31 @@ export let loader: LoaderFunction = () => {
     resources: [
       {
         name: "Remix Docs",
-        url: "https://remix.run/docs"
+        url: "https://remix.run/docs",
       },
       {
         name: "React Router Docs",
-        url: "https://reactrouter.com/docs"
+        url: "https://reactrouter.com/docs",
       },
       {
         name: "Remix Discord",
-        url: "https://discord.gg/VBePs6d"
-      }
+        url: "https://discord.gg/VBePs6d",
+      },
     ],
     demos: [
       {
         to: "demos/actions",
-        name: "Actions"
+        name: "Actions",
       },
       {
         to: "demos/about",
-        name: "Nested Routes, CSS loading/unloading"
+        name: "Nested Routes, CSS loading/unloading",
       },
       {
         to: "demos/params",
-        name: "URL Params and Error Boundaries"
-      }
-    ]
+        name: "URL Params and Error Boundaries",
+      },
+    ],
   };
 
   // https://remix.run/api/remix#json
@@ -53,7 +51,7 @@ export let loader: LoaderFunction = () => {
 export let meta: MetaFunction = () => {
   return {
     title: "Sanoncode",
-    description: "San Sebastian personal website"
+    description: "San Sebastian personal website",
   };
 };
 
@@ -61,43 +59,9 @@ export let meta: MetaFunction = () => {
 export default function Index() {
   let data = useLoaderData<IndexData>();
 
-  return ( 
+  return (
     <div className="remix__page">
-      <main>
-        <h2>Welcome to Remix!</h2>
-        <Button>Hello world</Button>
-        <p>
-          Feel free to take a look around the code to see how Remix does things,
-          it might be a bit different than what you’re used to. When you're
-          ready to dive deeper, we've got plenty of resources to get you
-          up-and-running quickly.
-        </p>
-        <p>
-          Check out all the demos in this starter, and then just delete the{" "}
-          <code>app/routes/demos</code> and <code>app/styles/demos</code>{" "}
-          folders when you're ready to turn this into your next project.
-        </p>
-      </main>
-      <aside>
-        <h2>Demos In This App</h2>
-        <ul>
-          {data.demos.map(demo => (
-            <li key={demo.to} className="remix__page__resource">
-              <Link to={demo.to} prefetch="intent">
-                {demo.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <h2>Resources</h2>
-        <ul>
-          {data.resources.map(resource => (
-            <li key={resource.url} className="remix__page__resource">
-              <a href={resource.url}>{resource.name}</a>
-            </li>
-          ))}
-        </ul>
-      </aside>
+      <main></main>
     </div>
   );
 }

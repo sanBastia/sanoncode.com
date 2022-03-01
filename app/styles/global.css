@@ -219,3 +219,18 @@ input:where([type="search"]) {
   display: flex;
   gap: 2rem;
 }
+
+.hero-intro-heading {
+  margin-top: 0;
+}
+
+.hero-social-media-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-photo .avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}

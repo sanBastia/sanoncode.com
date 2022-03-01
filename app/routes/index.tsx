@@ -64,7 +64,11 @@ export default function Index() {
       <main>
         <div className="hero">
           <div className="hero-photo">
-            <img className="avatar" src="" alt="San Sebastian" />
+            <img
+              className="avatar"
+              src="/images/avatar.jpg"
+              alt="San Sebastian"
+            />
           </div>
           <div className="hero-intro">
             <h1 className="hero-intro-heading">

@@ -75,9 +75,27 @@ export default function Index() {
               I’m San Sebastian, writing some code to impress people
             </h1>
             <div className="hero-social-media-icons">
-              <img className="icon-github" src="" alt="GitHub" />
-              <img className="icon-twitter" src="" alt="Twitter" />
-              <img className="icon-linkedin" src="" alt="Linkedin" />
+              <a href="https://github.com/sanBastia" target="_blank">
+                <img
+                  className="icon-github"
+                  src="/images/icon-github.svg"
+                  alt="GitHub"
+                />
+              </a>
+              <a href="https://twitter.com/" target="_blank">
+                <img
+                  className="icon-twitter"
+                  src="/images/icon-twitter.svg"
+                  alt="Twitter"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
+                <img
+                  className="icon-linkedin"
+                  src="/images/icon-linkedin.svg"
+                  alt="Linkedin"
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -61,7 +61,7 @@ export default function Index() {
 
   return (
     <div className="remix__page">
-      <main>
+      <main className="container">
         <div className="hero">
           <div className="hero-photo">
             <img

@@ -61,7 +61,23 @@ export default function Index() {
 
   return (
     <div className="remix__page">
-      <main></main>
+      <main>
+        <div className="hero">
+          <div className="hero-photo">
+            <img className="avatar" src="" alt="San Sebastian" />
+          </div>
+          <div className="hero-intro">
+            <h1 className="hero-intro-heading">
+              I’m San Sebastian, writing some code to impress people
+            </h1>
+            <div className="hero-social-media-icons">
+              <img className="icon-github" src="" alt="GitHub" />
+              <img className="icon-twitter" src="" alt="Twitter" />
+              <img className="icon-linkedin" src="" alt="Linkedin" />
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

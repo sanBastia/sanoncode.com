@@ -127,6 +127,10 @@ function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/" title="Remix" className="remix-app__header-home-link">
             <p className="brand">Sanoncode</p>
           </Link>
+          <label className="switch">
+            <input type="checkbox" />
+            <span className="slider round"></span>
+          </label>
         </div>
       </header>
       <div className="remix-app__main">

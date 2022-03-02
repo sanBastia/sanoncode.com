@@ -5,11 +5,11 @@
 :root {
   --color-foreground: hsl(0, 0%, 7%);
   --color-background: hsl(0, 0%, 100%);
+  --color-core: #2f387b;
   --color-links: hsl(213, 100%, 52%);
   --color-links-hover: hsl(213, 100%, 43%);
   --color-border: hsl(0, 0%, 82%);
-  --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica, Roboto,
-    Arial, sans-serif, system-ui, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-body: Montserrat, sans-serif;
 }
 
 html {
@@ -123,7 +123,6 @@ input:where([type="search"]) {
 .remix-app__header-home-link {
   width: 106px;
   height: 30px;
-  color: var(--color-foreground);
 }
 
 .remix-app__header-nav ul {
@@ -218,10 +217,21 @@ input:where([type="search"]) {
 .hero {
   display: flex;
   gap: 2rem;
+  justify-content: center;
+}
+
+.hero-intro {
+  max-width: 400px;
+  letter-spacing: 1px;
 }
 
 .hero-intro-heading {
   margin-top: 0;
+  font-weight: 200;
+}
+.hero-intro-name {
+  color: var(--color-core);
+  font-weight: bold;
 }
 
 .hero-social-media-icons {
@@ -233,4 +243,12 @@ input:where([type="search"]) {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--color-core);
 }

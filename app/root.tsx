@@ -125,7 +125,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <header className="remix-app__header">
         <div className="container remix-app__header-content">
           <Link to="/" title="Remix" className="remix-app__header-home-link">
-            Sanoncode
+            <p className="brand">Sanoncode</p>
           </Link>
         </div>
       </header>

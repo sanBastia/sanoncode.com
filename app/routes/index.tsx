@@ -72,7 +72,8 @@ export default function Index() {
           </div>
           <div className="hero-intro">
             <h1 className="hero-intro-heading">
-              I’m San Sebastian, writing some code to impress people
+              I’m <span className="hero-intro-name">San Sebastian</span>,
+              writing some code to impress people
             </h1>
             <div className="hero-social-media-icons">
               <a href="https://github.com/sanBastia" target="_blank">

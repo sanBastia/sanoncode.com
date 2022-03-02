@@ -1,6 +1,5 @@
 import type { MetaFunction, LoaderFunction } from "remix";
 import { useLoaderData, json, Link } from "remix";
-import { Button } from "@mantine/core";
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>;

@@ -16,6 +16,10 @@ import darkStylesUrl from "~/styles/dark.css";
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
   return [
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,200&display=swap",
+    },
     { rel: "stylesheet", href: globalStylesUrl },
     {
       rel: "stylesheet",

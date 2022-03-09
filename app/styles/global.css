@@ -314,8 +314,7 @@ input:checked + .slider:before {
 
 .subnavigation {
   display: flex;
-  gap: 1rem;
-  padding-left: 10em;
+  padding-left: 9.2em;
 }
 
 .subnavigation-wrapper {

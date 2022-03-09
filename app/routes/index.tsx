@@ -124,7 +124,7 @@ export default function Index() {
               <h1>Mari kita bahas destructuring</h1>
             </div>
             <div className="article-content-readtime">
-              <span>1 Jan 2022</span>
+              <span>28 Feb 2022</span>
               <span>
                 <img
                   className="coffee"
@@ -150,7 +150,7 @@ export default function Index() {
               <h1>Tiga titik dalam javascript</h1>
             </div>
             <div className="article-content-readtime">
-              <span>01 Feb 2022</span>
+              <span>01 Jan 2022</span>
               <span>
                 <img
                   className="coffee"

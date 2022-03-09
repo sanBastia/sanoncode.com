@@ -99,6 +99,77 @@ export default function Index() {
             </div>
           </div>
         </div>
+        <div className="subnavigation">
+          <div className="subnavigation-wrapper">
+            <img
+              className="icon-pencil"
+              src="/images/react-icons/ai/icon-pencil-gray.svg"
+              alt="pencil"
+            />
+            <p className="subnavigation-text">Writing</p>
+          </div>
+          <div className="subnavigation-wrapper">
+            <img
+              className="icon-laptop"
+              src="/images/react-icons/ai/icon-laptop.svg"
+              alt="laptop"
+            />
+            <p className="subnavigation-text">Works</p>
+          </div>
+        </div>
+        <hr className="horizontal-line" />
+        <div className="article">
+          <div className="article-content">
+            <div className="article-content-title">
+              <h1>Mari kita bahas destructuring</h1>
+            </div>
+            <div className="article-content-readtime">
+              <span>1 Jan 2022</span>
+              <span>
+                <img
+                  className="coffee"
+                  src="/images/icon-coffee.svg"
+                  alt="coffee"
+                />{" "}
+                5 minute read
+              </span>
+            </div>
+            <div className="article-content-post">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis quisquam molestias facere saepe quas dicta at eum
+                cumque. Dolorem sint saepe dignissimos fugit esse a molestiae
+                cumque ullam autem nam.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="article">
+          <div className="article-content">
+            <div className="article-content-title">
+              <h1>Tiga titik dalam javascript</h1>
+            </div>
+            <div className="article-content-readtime">
+              <span>01 Feb 2022</span>
+              <span>
+                <img
+                  className="coffee"
+                  src="/images/icon-coffee.svg"
+                  alt="coffee"
+                />{" "}
+                5 minute read
+              </span>
+            </div>
+            <div className="article-content-post">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis quisquam molestias facere saepe quas dicta at eum
+                cumque. Dolorem sint saepe dignissimos fugit esse a molestiae
+                cumque ullam autem nam.
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );

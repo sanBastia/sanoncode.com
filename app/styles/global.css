@@ -9,7 +9,7 @@
   --color-links: hsl(213, 100%, 52%);
   --color-links-hover: hsl(213, 100%, 43%);
   --color-border: hsl(0, 0%, 82%);
-  --font-body: Montserrat, sans-serif;
+  --font-body: "Montserrat", sans-serif;
 }
 
 html {
@@ -310,4 +310,60 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.subnavigation {
+  display: flex;
+  gap: 1rem;
+  padding-left: 10em;
+}
+
+.subnavigation-wrapper {
+  display: flex;
+  gap: 0.5em;
+  width: 10em;
+}
+
+.subnavigation-text {
+  font-size: 1.7em;
+  color: grey;
+}
+
+.subnavigation-text:hover {
+  color: var(--color-core);
+}
+.horizontal-line {
+  margin-top: 0em;
+  margin-bottom: 1em;
+  width: 700px;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+.article-content-title h1 {
+  margin: 0px;
+}
+
+.coffee {
+  margin-left: 1em;
+}
+.article-content-readtime span {
+  color: grey;
+}
+.article-content-post p {
+  color: grey;
+}
+.article-content-title {
+  color: var(--color-core);
 }

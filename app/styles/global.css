@@ -121,8 +121,11 @@ input:where([type="search"]) {
 }
 
 .remix-app__header-home-link {
-  width: 106px;
-  height: 30px;
+  width: 18em;
+  height: 2em;
+}
+.remix-app__header-home-link:hover {
+  text-decoration: none;
 }
 
 .remix-app__header-nav ul {
@@ -320,12 +323,16 @@ input:checked + .slider:before {
 .subnavigation-wrapper {
   display: flex;
   gap: 0.5em;
-  width: 10em;
+  width: 12em;
 }
 
 .subnavigation-text {
   font-size: 1.7em;
   color: grey;
+}
+.subnavigation-text-active {
+  color: var(--color-core);
+  font-size: 1.7em;
 }
 
 .subnavigation-text:hover {
@@ -361,7 +368,7 @@ input:checked + .slider:before {
   color: grey;
 }
 .article-content-post p {
-  color: grey;
+  color: black;
 }
 .article-content-title {
   color: var(--color-core);

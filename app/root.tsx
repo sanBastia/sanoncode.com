@@ -18,7 +18,7 @@ export let links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,700;1,200&display=swap",
+      href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap",
     },
     { rel: "stylesheet", href: globalStylesUrl },
     {

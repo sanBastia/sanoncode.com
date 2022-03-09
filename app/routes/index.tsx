@@ -106,7 +106,7 @@ export default function Index() {
               src="/images/react-icons/ai/icon-pencil-gray.svg"
               alt="pencil"
             />
-            <p className="subnavigation-text">Writing</p>
+            <p className="subnavigation-text-active">Writing</p>
           </div>
           <div className="subnavigation-wrapper">
             <img

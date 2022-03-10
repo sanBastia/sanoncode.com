@@ -1,6 +1,13 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, json, Link } from 'remix'
-import { ArticleCard, Container, Hero, Layout } from '~/components'
+import {
+  ArticleCard,
+  Container,
+  Divider,
+  Hero,
+  Layout,
+  SubNavigation,
+} from '~/components'
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>
@@ -32,25 +39,8 @@ export default function Index() {
     <Layout>
       <Container>
         <Hero />
-        <div className="subnavigation">
-          <div className="subnavigation-wrapper">
-            <img
-              className="icon-pencil"
-              src="/images/react-icons/ai/icon-pencil-gray.svg"
-              alt="pencil"
-            />
-            <h3 className="subnavigation-text-active">Writing</h3>
-          </div>
-          <div className="subnavigation-wrapper">
-            <img
-              className="icon-laptop"
-              src="/images/react-icons/ai/icon-laptop.svg"
-              alt="laptop"
-            />
-            <h3 className="subnavigation-text">Works</h3>
-          </div>
-        </div>
-        <hr className="horizontal-line" />
+        <SubNavigation />
+        <Divider />
         <ArticleCard
           title="Mari kita bahas destructuring"
           readTime={6}

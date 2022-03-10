@@ -20,7 +20,10 @@ export const links: LinksFunction = () => {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap',
     },
-    { rel: 'stylesheet', href: globalStylesUrl },
+    {
+      rel: 'stylesheet',
+      href: globalStylesUrl,
+    },
     {
       rel: 'stylesheet',
       href: darkStylesUrl,

@@ -56,8 +56,7 @@ export default function Index() {
     <Layout>
       <Container>
         <Hero />
-        <SubNavigation />
-        <Divider />
+
         {articles.map((article) => {
           return (
             <ArticleCard

@@ -329,7 +329,7 @@ input:checked + .slider:before {
 .subnavigation-text:hover {
   color: var(--color-core);
 }
-.horizontal-line {
+.divider {
   margin-top: 0em;
   margin-bottom: 1em;
   width: 700px;

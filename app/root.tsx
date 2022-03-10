@@ -65,7 +65,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
 export function CatchBoundary() {
   const caught = useCatch()
 
-  const message
+  let message
   switch (caught.status) {
     case 401:
       message = (

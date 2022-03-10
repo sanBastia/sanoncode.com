@@ -51,7 +51,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
     <Document title="Error!">
       <Layout>
         <div>
-          <h1>There was an error</h1>
+          <h1>Sorry, there was an error</h1>
           <p>{error.message}</p>
           <hr />
           <p>

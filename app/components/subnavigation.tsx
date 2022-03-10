@@ -19,7 +19,7 @@ export const SubNavigation: FunctionComponent<SubNavigationProps> = () => {
           src="/images/react-icons/ai/icon-laptop.svg"
           alt="laptop"
         />
-        <h3 className="subnavigation-text">Works</h3>
+        <h3 className="subnavigation-text">Projects</h3>
       </div>
     </div>
   )

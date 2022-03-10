@@ -1,6 +1,6 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, json, Link } from 'remix'
-import { Container, Hero, Layout } from '~/components'
+import { ArticleCard, Container, Hero, Layout } from '~/components'
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>
@@ -51,58 +51,24 @@ export default function Index() {
           </div>
         </div>
         <hr className="horizontal-line" />
-        <div className="article">
-          <div className="article-content">
-            <div className="article-content-title">
-              <h1>Mari kita bahas destructuring</h1>
-            </div>
-            <div className="article-content-readtime">
-              <span>28 Feb 2022</span>
-              <span>
-                <img
-                  className="coffee"
-                  src="/images/icon-coffee.svg"
-                  alt="coffee"
-                />{' '}
-                5 minute read
-              </span>
-            </div>
-            <div className="article-content-post">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <ArticleCard
+          title="Mari kita bahas destructuring"
+          readTime={6}
+          date="28 Feb 2022"
+          excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Blanditiis quisquam molestias facere saepe quas dicta at eum
                 cumque. Dolorem sint saepe dignissimos fugit esse a molestiae
-                cumque ullam autem nam.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="article">
-          <div className="article-content">
-            <div className="article-content-title">
-              <h1>Tiga titik dalam javascript</h1>
-            </div>
-            <div className="article-content-readtime">
-              <span>01 Jan 2022</span>
-              <span>
-                <img
-                  className="coffee"
-                  src="/images/icon-coffee.svg"
-                  alt="coffee"
-                />{' '}
-                5 minute read
-              </span>
-            </div>
-            <div className="article-content-post">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                cumque ullam autem nam."
+        />
+        <ArticleCard
+          title="Tiga titik dalam javascript"
+          readTime={5}
+          date="1 Jan 2022"
+          excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Blanditiis quisquam molestias facere saepe quas dicta at eum
                 cumque. Dolorem sint saepe dignissimos fugit esse a molestiae
-                cumque ullam autem nam.
-              </p>
-            </div>
-          </div>
-        </div>
+                cumque ullam autem nam."
+        />
       </Container>
     </Layout>
   )

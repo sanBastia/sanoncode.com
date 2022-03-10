@@ -9,7 +9,7 @@
   --color-links: hsl(213, 100%, 52%);
   --color-links-hover: hsl(213, 100%, 43%);
   --color-border: hsl(0, 0%, 82%);
-  --font-body: "Montserrat", sans-serif;
+  --font-body: 'Montserrat', sans-serif;
 }
 
 html {
@@ -63,8 +63,8 @@ hr {
   margin-bottom: 2rem;
 }
 
-input:where([type="text"]),
-input:where([type="search"]) {
+input:where([type='text']),
+input:where([type='search']) {
   display: block;
   border: 1px solid var(--color-border);
   width: 100%;
@@ -153,16 +153,6 @@ input:where([type="search"]) {
   justify-content: space-around;
 }
 
-.remix__page {
-  --gap: 1rem;
-  --space: 2rem;
-  display: grid;
-  grid-auto-rows: min-content;
-  gap: var(--gap);
-  padding-top: var(--space);
-  padding-bottom: var(--space);
-}
-
 @media print, screen and (min-width: 640px) {
   .remix__page {
     --gap: 2rem;
@@ -218,6 +208,7 @@ input:where([type="search"]) {
   display: flex;
   gap: 2rem;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 .hero-intro {
@@ -282,7 +273,7 @@ input:where([type="search"]) {
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;

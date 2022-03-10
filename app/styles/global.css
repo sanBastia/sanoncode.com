@@ -91,7 +91,7 @@ input:where([type='search']) {
 
 .container {
   --gutter: 16px;
-  width: 1024px;
+  width: 720px;
   max-width: calc(100% - var(--gutter) * 2);
   margin-right: auto;
   margin-left: auto;
@@ -116,7 +116,7 @@ input:where([type='search']) {
 
 .remix-app__header-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -208,7 +208,7 @@ input:where([type='search']) {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  padding-top: 2rem;
+  padding: 3rem 0;
 }
 
 .hero-intro {
@@ -308,29 +308,36 @@ input:checked + .slider:before {
 
 .subnavigation {
   display: flex;
-  padding-left: 9.2em;
+  gap: 2rem;
+  margin: 1rem 0;
 }
 
 .subnavigation-link {
+  color: #aaa;
   display: flex;
-  gap: 0.5em;
-  width: 12em;
+  gap: 0.5rem;
+  align-items: center;
   text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
+
 .subnavigation-link:hover {
+  color: #aaa;
   text-decoration: none;
 }
+
 .subnavigation-link:focus {
   outline: none;
+}
+
+.subnavigation-link.active {
+  color: var(--color-core);
 }
 
 .subnavigation-text {
   font-size: 1.7em;
   color: grey;
-}
-.subnavigation-text-active {
-  color: var(--color-core);
-  font-size: 1.7em;
 }
 
 .subnavigation-text:hover {

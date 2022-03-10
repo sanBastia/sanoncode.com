@@ -311,10 +311,17 @@ input:checked + .slider:before {
   padding-left: 9.2em;
 }
 
-.subnavigation-wrapper {
+.subnavigation-link {
   display: flex;
   gap: 0.5em;
   width: 12em;
+  text-decoration: none;
+}
+.subnavigation-link:hover {
+  text-decoration: none;
+}
+.subnavigation-link:focus {
+  outline: none;
 }
 
 .subnavigation-text {

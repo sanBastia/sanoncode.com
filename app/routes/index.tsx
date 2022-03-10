@@ -1,6 +1,6 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, json, Link } from 'remix'
-import { Layout } from '~/components'
+import { Container, Layout } from '~/components'
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>
@@ -30,7 +30,7 @@ export default function Index() {
 
   return (
     <Layout>
-      <div className="container">
+      <Container>
         <div className="hero">
           <div className="hero-photo">
             <img
@@ -76,7 +76,7 @@ export default function Index() {
               src="/images/react-icons/ai/icon-pencil-gray.svg"
               alt="pencil"
             />
-            <p className="subnavigation-text-active">Writing</p>
+            <h3 className="subnavigation-text-active">Writing</h3>
           </div>
           <div className="subnavigation-wrapper">
             <img
@@ -84,7 +84,7 @@ export default function Index() {
               src="/images/react-icons/ai/icon-laptop.svg"
               alt="laptop"
             />
-            <p className="subnavigation-text">Works</p>
+            <h3 className="subnavigation-text">Works</h3>
           </div>
         </div>
         <hr className="horizontal-line" />
@@ -140,7 +140,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </Layout>
   )
 }

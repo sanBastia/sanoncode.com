@@ -26,16 +26,12 @@ export default function ProjectsRoute() {
     <Layout>
       <Container>
         <Hero />
-<<<<<<< Updated upstream
-        <pre>{JSON.stringify(projects, null, 2)}</pre>
-=======
         <div className="project-container">
-          <div className="project-item">a</div>
-          <div className="project-item">b</div>
-          <div className="project-item">c</div>
-          <div className="project-item">d</div>
+          <div className="project-item"></div>
+          <div className="project-item"></div>
+          <div className="project-item"></div>
+          <div className="project-item"></div>
         </div>
->>>>>>> Stashed changes
       </Container>
     </Layout>
   )

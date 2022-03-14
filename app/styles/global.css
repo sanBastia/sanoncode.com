@@ -208,7 +208,7 @@ input:where([type='search']) {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  padding: 3rem 0;
+  padding: 2em 0 2em 0;
 }
 
 .hero-intro {
@@ -231,8 +231,8 @@ input:where([type='search']) {
 }
 
 .hero-photo .avatar {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
@@ -382,9 +382,14 @@ input:checked + .slider:before {
 .project-container {
   display: flex;
   width: 700px;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
 }
 .project-item {
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  border: 1px black solid;
+  border-radius: 1em;
+  background-color: gray;
 }

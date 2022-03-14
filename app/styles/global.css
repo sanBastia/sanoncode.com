@@ -378,3 +378,13 @@ input:checked + .slider:before {
 .article-content-title {
   color: var(--color-core);
 }
+
+.project-container {
+  display: flex;
+  width: 700px;
+}
+.project-item {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}

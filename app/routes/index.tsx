@@ -62,6 +62,7 @@ export default function Index() {
             <ArticleCard
               key={article.id}
               title={article.title}
+              slug={article.slug}
               readTime={article.readTime}
               date={article.date}
               excerpt={article.excerpt}

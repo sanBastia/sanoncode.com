@@ -45,13 +45,11 @@ body {
 }
 
 a {
-  color: var(--color-links);
+  color: black;
   text-decoration: none;
 }
-
 a:hover {
-  color: var(--color-links-hover);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 hr {

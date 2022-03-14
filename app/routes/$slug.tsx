@@ -1,15 +1,28 @@
 import { json, LoaderFunction, useLoaderData } from 'remix'
+import { gql } from 'urql'
+import { graphcmsClient } from '~/lib'
 import { Article } from '~/types'
 
 type ArticleSlugData = Article
 
 export const loader: LoaderFunction = async () => {
-  const article = {
-    id: 131313,
-    title: 'some title',
-    body: 'some body',
-  }
+  const oneArticleQuery = gql`
+    query OneArticle {
+      article(where: { slug: "..." }) {
+        id
+        slug
+        title
+        date
+        readTime
+        excerpt
+        body
+      }
+    }
+  `
+  const response = await graphcmsClient.query(oneArticleQuery).toPromise()
+  const article = response.data.article
 
+  // https://remix.run/api/remix#json
   return json(article)
 }
 

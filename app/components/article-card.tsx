@@ -13,6 +13,8 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
   readTime,
   excerpt,
 }) => {
+  const formattedDate = new Date(date)
+
   return (
     <div className="article">
       <div className="article-content">
@@ -20,7 +22,7 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
           <h1>{title}</h1>
         </div>
         <div className="article-content-date">
-          <span>{date}</span>
+          <span>{formattedDate.toDateString().substring(4)}</span>
           <span>
             <img
               className="coffee"

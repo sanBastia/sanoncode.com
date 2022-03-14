@@ -1,9 +1,10 @@
 import { json, LoaderFunction, useLoaderData } from 'remix'
 import { gql } from 'urql'
+import { Article } from '~/components'
 import { graphcmsClient } from '~/lib'
-import { Article } from '~/types'
+import { TArticle } from '~/types'
 
-type ArticleSlugData = Article
+type ArticleSlugData = TArticle
 
 export const loader: LoaderFunction = async ({ params }) => {
   const oneArticleQuery = gql`
@@ -35,6 +36,7 @@ export default function ArticleSlug() {
     <main>
       <h1>Article</h1>
       <pre>{JSON.stringify(article, null, 2)}</pre>
+      <Article body={article.body} />
     </main>
   )
 }

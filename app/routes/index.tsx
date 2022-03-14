@@ -8,11 +8,11 @@ import {
   Layout,
   SubNavigation,
 } from '~/components'
-import { Article } from '~/types'
+import { TArticle } from '~/types'
 import { gql } from '@urql/core'
 import { graphcmsClient } from '~/lib'
 
-type IndexData = Article[]
+type IndexData = TArticle[]
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next

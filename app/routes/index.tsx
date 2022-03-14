@@ -19,19 +19,21 @@ type IndexData = Article[]
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export const loader: LoaderFunction = async () => {
-  const AllArticlesQuery = gql`
+  const allArticlesQuery = gql`
     query AllArticles {
       articles {
         id
+        slug
         title
         date
         readTime
+        excerpt
         body
       }
     }
   `
 
-  const response = await graphcmsClient.query(AllArticlesQuery).toPromise()
+  const response = await graphcmsClient.query(allArticlesQuery).toPromise()
   const articles = response.data.articles
 
   // https://remix.run/api/remix#json

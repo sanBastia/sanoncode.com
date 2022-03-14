@@ -9,6 +9,8 @@ import {
   SubNavigation,
 } from '~/components'
 import { Article } from '~/types'
+import { gql } from '@urql/core'
+import { graphcmsClient } from '~/lib'
 
 type IndexData = Article[]
 
@@ -16,8 +18,21 @@ type IndexData = Article[]
 // you can connect to a database or run any server side code you want right next
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
-export const loader: LoaderFunction = () => {
-  const articles: any[] = []
+export const loader: LoaderFunction = async () => {
+  const AllArticlesQuery = gql`
+    query AllArticles {
+      articles {
+        id
+        title
+        date
+        readTime
+        body
+      }
+    }
+  `
+
+  const response = await graphcmsClient.query(AllArticlesQuery).toPromise()
+  const articles = response.data.articles
 
   // https://remix.run/api/remix#json
   return json(articles)

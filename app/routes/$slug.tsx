@@ -5,10 +5,10 @@ import { Article } from '~/types'
 
 type ArticleSlugData = Article
 
-export const loader: LoaderFunction = async () => {
+export const loader: LoaderFunction = async ({ params }) => {
   const oneArticleQuery = gql`
-    query OneArticle {
-      article(where: { slug: "..." }) {
+    query OneArticle($slug: String!) {
+      article(where: { slug: $slug }) {
         id
         slug
         title
@@ -19,7 +19,9 @@ export const loader: LoaderFunction = async () => {
       }
     }
   `
-  const response = await graphcmsClient.query(oneArticleQuery).toPromise()
+  const response = await graphcmsClient
+    .query(oneArticleQuery, { slug: params.slug })
+    .toPromise()
   const article = response.data.article
 
   // https://remix.run/api/remix#json

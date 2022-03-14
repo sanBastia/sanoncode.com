@@ -17,24 +17,7 @@ type IndexData = Article[]
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export const loader: LoaderFunction = () => {
-  const articles = [
-    {
-      id: 'abc789',
-      title: 'Mari kita bahas destructuring',
-      readTime: 6,
-      date: '28 Feb 2022',
-      excerpt:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quisquam molestias facere saepe quas dicta at eum cumque.Dolorem sint saepe dignissimos fugit esse a molestiae cumque ullam autem nam.',
-    },
-    {
-      id: 'xyz123',
-      title: 'Tiga titik dalam javascript',
-      readTime: 5,
-      date: '1 Jan 2022',
-      excerpt:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quisquam molestias facere saepe quas dicta at eum cumque.Dolorem sint saepe dignissimos fugit esse a molestiae cumque ullam autem nam.',
-    },
-  ]
+  const articles: any[] = []
 
   // https://remix.run/api/remix#json
   return json(articles)

@@ -20,7 +20,7 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
 
   return (
     <Link to={slug}>
-      <div className="article">
+      <div className="article-card">
         <div className="article-content">
           <div className="article-content-title">
             <h1>{title}</h1>

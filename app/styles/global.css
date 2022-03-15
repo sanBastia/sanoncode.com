@@ -347,11 +347,15 @@ input:checked + .slider:before {
   width: 700px;
 }
 
-.article {
+.article-card {
   display: flex;
   justify-content: center;
   gap: 1em;
   margin-bottom: 1em;
+}
+
+.article h3 {
+  color: var(--color-core);
 }
 
 .article-content {
@@ -390,4 +394,8 @@ input:checked + .slider:before {
   border: 1px black solid;
   border-radius: 1em;
   background-color: gray;
+}
+
+article img {
+  width: 400px;
 }

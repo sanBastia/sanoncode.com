@@ -35,7 +35,7 @@ export default function ArticleSlug() {
   return (
     <main>
       <h1>Article</h1>
-      <pre>{JSON.stringify(article, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(article, null, 2)}</pre> */}
       <Article body={article.body} />
     </main>
   )

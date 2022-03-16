@@ -397,5 +397,13 @@ input:checked + .slider:before {
 }
 
 article img {
-  width: 400px;
+  width: 700px;
+}
+
+article p {
+  line-height: 2;
+}
+
+article p > img {
+  text-align: center;
 }

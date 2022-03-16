@@ -146,7 +146,19 @@ function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       <footer className="remix-app__footer">
-        <p className="container remix-app__footer-content">GitHub | Twitter</p>
+        <p className="container remix-app__footer-content">
+          <a href="https://github.com/sanBastia" target="_blank">
+            Github
+          </a>{' '}
+          |{' '}
+          <a href="https://twitter.com/" target="_blank">
+            Twitter
+          </a>{' '}
+          |{' '}
+          <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
+            Linkedin{' '}
+          </a>
+        </p>
       </footer>
     </div>
   )

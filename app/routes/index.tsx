@@ -56,7 +56,6 @@ export default function Index() {
     <Layout>
       <Container>
         <Hero />
-
         {articles.map((article) => {
           return (
             <ArticleCard

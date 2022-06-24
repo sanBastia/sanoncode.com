@@ -21,7 +21,7 @@ type IndexData = TArticle[]
 export const loader: LoaderFunction = async () => {
   const allArticlesQuery = gql`
     query AllArticles {
-      articles {
+      articles(orderBy: createdAt_DESC) {
         id
         slug
         title

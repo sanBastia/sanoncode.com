@@ -1,14 +1,16 @@
 import { FunctionComponent } from 'react'
-import ReactMarkdown from 'react-markdown'
+import Markdoc from '@markdoc/markdoc'
+import { markdocRenderReact } from '~/lib'
+import React from 'react'
 
 interface ArticleProps {
-  body?: string
+  body: any
 }
 
 export const Article: FunctionComponent<ArticleProps> = ({ body }) => {
   return (
     <article>
-      <ReactMarkdown>{body as string}</ReactMarkdown>
+      <>{markdocRenderReact(body)}</>
     </article>
   )
 }

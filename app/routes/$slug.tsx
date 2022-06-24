@@ -1,10 +1,14 @@
 import { json, LoaderFunction, useLoaderData } from 'remix'
 import { gql } from 'urql'
 import { Article } from '~/components'
-import { graphcmsClient } from '~/lib'
+import { graphcmsClient, markdocParseTransform } from '~/lib'
 import { TArticle } from '~/types'
+import Markdoc, { RenderableTreeNode } from '@markdoc/markdoc'
 
-type ArticleSlugData = TArticle
+type ArticleSlugData = {
+  article: TArticle
+  content: RenderableTreeNode
+}
 
 export const loader: LoaderFunction = async ({ params }) => {
   const oneArticleQuery = gql`
@@ -23,19 +27,22 @@ export const loader: LoaderFunction = async ({ params }) => {
   const response = await graphcmsClient
     .query(oneArticleQuery, { slug: params.slug })
     .toPromise()
+
   const article = response.data.article
 
+  const content = markdocParseTransform(article.body)
+  console.log(content)
   // https://remix.run/api/remix#json
-  return json(article)
+  return json({ article, content })
 }
 
 export default function ArticleSlug() {
-  const article = useLoaderData<ArticleSlugData>()
+  const data = useLoaderData<ArticleSlugData>()
 
   return (
     <main>
-      <h1>{article.title}</h1>
-      <Article body={article.body} />
+      <h1>{data.article.title}</h1>
+      <Article body={data.content} />
     </main>
   )
 }

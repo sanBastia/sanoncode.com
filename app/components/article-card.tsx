@@ -7,6 +7,16 @@ interface ArticleCardProps {
   date: string
   readTime: number
   excerpt?: string
+  body: any
+}
+
+function minutesRead(body: string) {
+  const text = body
+  const wpm = 225
+  const words = text.trim().split(/\s+/).length
+  const time = Math.ceil(words / wpm)
+
+  return time
 }
 
 export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
@@ -15,6 +25,7 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
   date,
   readTime,
   excerpt,
+  body,
 }) => {
   const formattedDate = new Date(date)
 
@@ -33,7 +44,7 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
                 src="/images/icon-coffee.svg"
                 alt="coffee"
               />{' '}
-              {readTime} minutes read
+              {minutesRead(body)} minutes read
             </span>
           </div>
           <div className="article-content-post">

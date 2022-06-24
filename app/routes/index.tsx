@@ -65,6 +65,7 @@ export default function Index() {
               readTime={article.readTime}
               date={article.date}
               excerpt={article.excerpt}
+              body={article.body}
             />
           )
         })}

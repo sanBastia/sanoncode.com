@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import Markdoc, { Tag, RenderableTreeNode } from '@markdoc/markdoc'
+
 import React from 'react'
 
 import { useState, useEffect } from 'react'
@@ -8,6 +9,7 @@ import type {
   Language as PrismLanguage,
   PrismTheme,
 } from 'prism-react-renderer'
+import defaultTheme from 'prism-react-renderer/themes/github'
 
 interface FenceProps {
   theme?: PrismTheme
@@ -18,9 +20,14 @@ interface FenceProps {
 export const Fence = ({ children, language }: FenceProps) => {
   console.log({ children, language })
   return (
-    <Highlight {...defaultProps} code={children} language="javascript">
+    <Highlight
+      {...defaultProps}
+      code={children}
+      language={language || 'javascript'}
+      theme={defaultTheme}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <pre className={`fence ${className}`} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

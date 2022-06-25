@@ -407,3 +407,7 @@ article p {
 article p > img {
   text-align: center;
 }
+
+.fence {
+  padding-left: 2rem;
+}

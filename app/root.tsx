@@ -1,12 +1,15 @@
 import {
+  json,
   Link,
   Links,
   LiveReload,
+  LoaderFunction,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useCatch,
+  useLoaderData,
 } from 'remix'
 import type { LinksFunction } from 'remix'
 
@@ -99,7 +102,11 @@ export function CatchBoundary() {
     </Document>
   )
 }
-
+export const loader: LoaderFunction = async () => {
+  return json({
+    ENV: { NODE_ENV: process.env.NODE_ENV },
+  })
+}
 function Document({
   children,
   title,
@@ -107,6 +114,7 @@ function Document({
   children: React.ReactNode
   title?: string
 }) {
+  const data = useLoaderData()
   return (
     <html lang="en">
       <head>
@@ -120,7 +128,14 @@ function Document({
         {children}
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
+        {data?.ENV && (
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `window.ENV = ${JSON.stringify(data?.ENV)};`,
+            }}
+          />
+        )}
       </body>
     </html>
   )

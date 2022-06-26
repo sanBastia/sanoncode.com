@@ -18,7 +18,6 @@ interface FenceProps {
 }
 
 export const Fence = ({ children, language }: FenceProps) => {
-  console.log({ children, language })
   return (
     <Highlight
       {...defaultProps}

@@ -31,7 +31,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   const article = response.data.article
 
   const content = markdocParseTransform(article.body)
-  console.log(content)
+
   // https://remix.run/api/remix#json
   return json({ article, content })
 }

@@ -9,13 +9,6 @@ export const isEnvProduction = ENV?.NODE_ENV === 'production'
 export const isSameHostName = window.location.hostname === 'sanoncode.com'
 export const isProductionAllowed = isEnvProduction && isSameHostName
 
-console.log({
-  isEnvProduction,
-  isSameHostName,
-  isProductionAllowed,
-  ENV,
-})
-
 if (isProductionAllowed) {
   splitbee.init()
 }

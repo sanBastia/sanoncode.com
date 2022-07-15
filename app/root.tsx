@@ -13,19 +13,18 @@ import {
 } from 'remix'
 import type { LinksFunction } from 'remix'
 
-import globalStylesUrl from '~/styles/global.css'
-import darkStylesUrl from '~/styles/dark.css'
+import tailwindStyles from '~/styles/app.css'
 
 // https://remix.run/api/app#links
 export const links: LinksFunction = () => {
   return [
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap',
     },
     {
       rel: 'stylesheet',
-      href: globalStylesUrl,
+      href: tailwindStyles,
     },
     // {
     //   rel: 'stylesheet',
@@ -103,6 +102,11 @@ export function CatchBoundary() {
   )
 }
 export const loader: LoaderFunction = async () => {
+  console.log({
+    endpoint: process.env.GRAPHCMS_ENDPOINT,
+    projectname: process.env.PROJECT_NAME,
+  })
+
   return json({
     ENV: { NODE_ENV: process.env.NODE_ENV },
   })

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { Divider, SubNavigation } from '~/components'
+import { Divider, SubNavigation, KitwindHero } from '~/components'
 
 interface HeroProps {
   children?: React.ReactNode
@@ -8,6 +8,7 @@ interface HeroProps {
 export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
   return (
     <>
+      <KitwindHero />
       <div className="hero">
         <div className="hero-photo">
           <img

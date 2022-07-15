@@ -1,13 +1,6 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, json, Link } from 'remix'
-import {
-  ArticleCard,
-  Container,
-  Divider,
-  Hero,
-  Layout,
-  SubNavigation,
-} from '~/components'
+import { ArticleCard, Container, Hero, Layout } from '~/components'
 import { TArticle } from '~/types'
 import { gql } from '@urql/core'
 import { graphcmsClient } from '~/lib'

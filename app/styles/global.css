@@ -2,6 +2,7 @@
  * You can just delete everything here or keep whatever you like, it's just a
  * quick baseline!
  */
+
 :root {
   --color-foreground: hsl(0, 0%, 7%);
   --color-background: hsl(0, 0%, 100%);
@@ -48,6 +49,7 @@ a {
   color: black;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
@@ -102,7 +104,7 @@ input:where([type='search']) {
   min-height: calc(100vh - env(safe-area-inset-bottom));
 }
 
-.remix-app > * {
+.remix-app>* {
   width: 100%;
 }
 
@@ -122,6 +124,7 @@ input:where([type='search']) {
   width: 18em;
   height: 2em;
 }
+
 .remix-app__header-home-link:hover {
   text-decoration: none;
 }
@@ -151,7 +154,8 @@ input:where([type='search']) {
   justify-content: space-around;
 }
 
-@media print, screen and (min-width: 640px) {
+@media print,
+screen and (min-width: 640px) {
   .remix__page {
     --gap: 2rem;
     grid-auto-rows: unset;
@@ -165,26 +169,26 @@ input:where([type='search']) {
   }
 }
 
-.remix__page > main > :first-child {
+.remix__page>main> :first-child {
   margin-top: 0;
 }
 
-.remix__page > main > :last-child {
+.remix__page>main> :last-child {
   margin-bottom: 0;
 }
 
-.remix__page > aside {
+.remix__page>aside {
   margin: 0;
   padding: 1.5ch 2ch;
   border: solid 1px var(--color-border);
   border-radius: 0.5rem;
 }
 
-.remix__page > aside > :first-child {
+.remix__page>aside> :first-child {
   margin-top: 0;
 }
 
-.remix__page > aside > :last-child {
+.remix__page>aside> :last-child {
   margin-bottom: 0;
 }
 
@@ -197,7 +201,7 @@ input:where([type='search']) {
   border-radius: 0.5rem;
 }
 
-.remix__form > * {
+.remix__form>* {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -218,6 +222,7 @@ input:where([type='search']) {
   margin-top: 0;
   font-weight: 200;
 }
+
 .hero-intro-name {
   color: var(--color-core);
   font-weight: bold;
@@ -281,15 +286,15 @@ input:where([type='search']) {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--color-core);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--color-core);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -341,6 +346,7 @@ input:checked + .slider:before {
 .subnavigation-text:hover {
   color: var(--color-core);
 }
+
 .divider {
   margin-top: 0em;
   margin-bottom: 1em;
@@ -371,12 +377,15 @@ input:checked + .slider:before {
 .coffee {
   margin-left: 1em;
 }
+
 .article-content-readtime span {
   color: grey;
 }
+
 .article-content-post p {
   color: black;
 }
+
 .article-content-title {
   color: var(--color-core);
 }
@@ -388,6 +397,7 @@ input:checked + .slider:before {
   gap: 2em;
   justify-content: center;
 }
+
 .project-item {
   width: 300px;
   height: 300px;
@@ -404,7 +414,7 @@ article p {
   line-height: 2;
 }
 
-article p > img {
+article p>img {
   text-align: center;
 }
 

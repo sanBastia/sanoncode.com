@@ -1,5 +1,5 @@
-import type { LinksFunction } from "@remix-run/node";
-import { json, LoaderFunction } from "@remix-run/node";
+import type { LinksFunction } from '@remix-run/node'
+import { json, LoaderFunction } from '@remix-run/node'
 
 import {
   Link,
@@ -11,9 +11,9 @@ import {
   ScrollRestoration,
   useCatch,
   useLoaderData,
-} from "@remix-run/react";
+} from '@remix-run/react'
 
-import tailwindStyles from '~/styles/app.css'
+import styles from '~/styles/output.css'
 
 // https://remix.run/api/app#links
 export const links: LinksFunction = () => {
@@ -24,7 +24,7 @@ export const links: LinksFunction = () => {
     },
     {
       rel: 'stylesheet',
-      href: tailwindStyles,
+      href: styles,
     },
     // {
     //   rel: 'stylesheet',
@@ -102,13 +102,11 @@ export function CatchBoundary() {
   )
 }
 export const loader: LoaderFunction = async () => {
-  console.log({
-    endpoint: process.env.GRAPHCMS_ENDPOINT,
-    projectname: process.env.PROJECT_NAME,
-  })
-
   return json({
-    ENV: { NODE_ENV: process.env.NODE_ENV },
+    ENV: {
+      GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
+      NODE_ENV: process.env.NODE_ENV,
+    },
   })
 }
 function Document({

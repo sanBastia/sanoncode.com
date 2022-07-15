@@ -1,4 +1,5 @@
-import { json, LoaderFunction, useLoaderData } from 'remix'
+import { json, LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { gql } from 'urql'
 import { Article } from '~/components'
 import { graphcmsClient, markdocParseTransform } from '~/lib'

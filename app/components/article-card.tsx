@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { Link, useLocation } from 'remix'
+import { Link, useLocation } from "@remix-run/react";
 
 interface ArticleCardProps {
   title: string

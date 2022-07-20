@@ -19,18 +19,21 @@ import styles from '~/styles/output.css'
 export const links: LinksFunction = () => {
   return [
     {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+    },
+    {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap',
     },
     {
       rel: 'stylesheet',
       href: styles,
     },
-    // {
-    //   rel: 'stylesheet',
-    //   href: darkStylesUrl,
-    //   media: '(prefers-color-scheme: dark)',
-    // },
   ]
 }
 
@@ -145,38 +148,72 @@ function Document({
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="remix-app">
-      <header className="remix-app__header">
-        <div className="container remix-app__header-content">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
-            <p className="brand">Sanoncode</p>
-          </Link>
-          <label className="switch">
-            <input type="checkbox" />
-            <span className="slider round"></span>
-          </label>
+    <main className="bg-white relative overflow-auto h-screen">
+      <header className="h-24 sm:h-32 flex items-center  w-full">
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <div className="capitalize text-black flex items-center">
+            <span className="text-xl md:text-4xl ml-3 mt-1 font-bold">
+              sanoncode
+            </span>
+          </div>
+          <div className="flex items-center">
+            <nav className="uppercase text-xs md:text-xl flex flex-row justify-start">
+              <a href="#" className="px-2 flex text-black">
+                Works
+              </a>
+              <a href="#" className="px-2 flex text-black">
+                Writing
+              </a>
+            </nav>
+          </div>
         </div>
       </header>
-
-      <div className="remix-app__main">
-        <div className="container remix-app__main-content">{children}</div>
+      <div className="flex relative items-center">
+        <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
+          <div className="flex">
+            <img
+              src="/images/avatar.jpg"
+              className="rounded-lg h-28 w-28 mx-auto"
+            />
+          </div>
+          <div className="flex flex-col">
+            <p className="text-2xl md:text-4xl my-6 text-center text-black">
+              Hi, I&#x27;m San Sebastian 🤘
+            </p>
+            <p className="text-lg md:text-2xl mx-auto text-center py-2">
+              Building digital products, brands, and experiences.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <a href="https://github.com/sanBastia" target="_blank">
+              <img
+                className="p-4 flex"
+                src="/images/icon-github.svg"
+                alt="GitHub"
+              />
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+              <img
+                className="p-4 flex"
+                src="/images/icon-twitter.svg"
+                alt="Twitter"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
+              <img
+                className="p-4 flex"
+                src="/images/icon-linkedin.svg"
+                alt="Linkedin"
+              />
+            </a>
+          </div>
+        </div>
       </div>
-
-      <footer className="remix-app__footer">
-        <p className="container remix-app__footer-content">
-          <a href="https://github.com/sanBastia" target="_blank">
-            Github
-          </a>{' '}
-          |{' '}
-          <a href="https://twitter.com/" target="_blank">
-            Twitter
-          </a>{' '}
-          |{' '}
-          <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
-            Linkedin{' '}
-          </a>
-        </p>
-      </footer>
-    </div>
+      {/* <div className="container mx-auto px-4">
+        <div className="remix-app__main">
+          <div className="container remix-app__main-content">{children}</div>
+        </div>
+      </div> */}
+    </main>
   )
 }

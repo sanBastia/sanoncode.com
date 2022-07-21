@@ -1,13 +1,11 @@
 import { FunctionComponent } from 'react'
-import Markdoc from '@markdoc/markdoc'
 import { markdocRenderReact } from '~/lib'
-import React from 'react'
 
-interface ArticleProps {
+interface ArticleBodyProps {
   body: any
 }
 
-export const Article: FunctionComponent<ArticleProps> = ({ body }) => {
+export const ArticleBody: FunctionComponent<ArticleBodyProps> = ({ body }) => {
   return (
     <article>
       <>{markdocRenderReact(body)}</>
@@ -15,4 +13,4 @@ export const Article: FunctionComponent<ArticleProps> = ({ body }) => {
   )
 }
 
-export default Article
+export default ArticleBody

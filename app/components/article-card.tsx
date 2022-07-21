@@ -1,13 +1,9 @@
 import { FunctionComponent } from 'react'
-import { Link, useLocation } from "@remix-run/react";
+import { Link, useLocation } from '@remix-run/react'
+import { Article, Articles } from '~/types'
 
 interface ArticleCardProps {
-  title: string
-  slug: string
-  date: string
-  readTime: number
-  excerpt?: string
-  body: any
+  articles: Articles
 }
 
 function minutesRead(body: string) {
@@ -18,42 +14,106 @@ function minutesRead(body: string) {
 
   return time
 }
-
 export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
-  title,
-  slug,
-  date,
-  readTime,
-  excerpt,
-  body,
+  articles,
 }) => {
-  const formattedDate = new Date(date)
-
   return (
-    <Link to={slug}>
-      <div className="article-card">
-        <div className="article-content">
-          <div className="article-content-title">
-            <h1>{title}</h1>
-          </div>
-          <div className="article-content-date">
-            <span>{formattedDate.toDateString().substring(4)}</span>
-            <span>
-              <img
-                className="coffee"
-                src="/images/icon-coffee.svg"
-                alt="coffee"
-              />{' '}
-              {minutesRead(body)} minutes read
-            </span>
-          </div>
-          <div className="article-content-post">
-            <p>{excerpt}</p>
-          </div>
+    <>
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+          {articles.map((item, index) => {
+            return <ArticleItem key={item.id || index} item={item} />
+          })}
         </div>
       </div>
-    </Link>
+      {/* <Link to={slug}>
+        <div className="article-card">
+          <div className="article-content">
+            <div className="article-content-title">
+              <h1>{title}</h1>
+            </div>
+            <div className="article-content-date">
+              <span>{formattedDate.toDateString().substring(4)}</span>
+              <span>
+                <img
+                  className="coffee"
+                  src="/images/icon-coffee.svg"
+                  alt="coffee"
+                />{' '}
+                {minutesRead(body)} minutes read
+              </span>
+            </div>
+            <div className="article-content-post">
+              <p>{excerpt}</p>
+            </div>
+          </div>
+        </div>
+      </Link> */}
+    </>
   )
 }
 
+interface ArticleItemProps {
+  item: Article
+}
+const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
+  const formattedDate = new Date(item.date)
+  const month = formattedDate.toString().split(' ')[1]
+  const date = formattedDate.toString().split(' ')[2]
+  return (
+    <div className="flex">
+      <div className="pt-1 mr-6 text-center">
+        <div className="px-2 pb-1 mb-1 border-b border-gray-400">
+          <p className="text-sm text-blue-gray-700">{month}</p>
+        </div>
+        <div className="px-2">
+          <p className="text-lg font-bold">{date}</p>
+        </div>
+      </div>
+      <div>
+        <div className="mb-2">
+          <Link
+            to={item.slug}
+            className="text-xs font-semibold tracking-wide uppercase transition-colors duration-200 text-blue-400 hover:text-blue-900"
+            aria-label="Category"
+          >
+            Javascript
+          </Link>
+        </div>
+        <div className="mb-2">
+          <Link
+            to={item.slug}
+            aria-label="Article"
+            className="inline-block text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-blue-900"
+          >
+            {item.title}
+          </Link>
+        </div>
+        <p className="mb-5 h-20 text-gray-700">{item.excerpt}</p>
+        <div className="flex items-center">
+          <a href="/" aria-label="Author" title="Author" className="mr-3">
+            <img
+              src="./images/avatar.jpg"
+              alt="avatar"
+              className="object-cover w-10 h-10 rounded-full shadow-sm"
+            />
+          </a>
+          <div>
+            <a
+              href="/"
+              aria-label="Author"
+              title="Author"
+              className="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              San Sebastian
+            </a>
+            <p className="text-sm font-medium leading-4 text-gray-600">
+              Author
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 export default ArticleCard

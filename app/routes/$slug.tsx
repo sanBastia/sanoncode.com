@@ -1,13 +1,13 @@
-import { json, LoaderFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { json, LoaderFunction } from '@remix-run/node'
+import { useLoaderData } from '@remix-run/react'
 import { gql } from 'urql'
-import { Article } from '~/components'
+import { ArticleBody } from '~/components'
 import { graphcmsClient, markdocParseTransform } from '~/lib'
-import { TArticle } from '~/types'
+import { Article } from '~/types'
 import Markdoc, { RenderableTreeNode } from '@markdoc/markdoc'
 
 type ArticleSlugData = {
-  article: TArticle
+  article: Article
   content: RenderableTreeNode
 }
 
@@ -43,7 +43,7 @@ export default function ArticleSlug() {
   return (
     <main>
       <h1>{data.article.title}</h1>
-      <Article body={data.content} />
+      <ArticleBody body={data.content} />
     </main>
   )
 }

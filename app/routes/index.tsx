@@ -1,12 +1,12 @@
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import { ArticleCard, Container, Hero, Layout } from '~/components'
-import { TArticle } from '~/types'
+import type { LoaderFunction, MetaFunction } from '@remix-run/node'
+import { json } from '@remix-run/node'
+import { useLoaderData } from '@remix-run/react'
+import { ArticleCard, Hero, ProjectCard, SubHeading } from '~/components'
+import { Articles } from '~/types'
 import { gql } from '@urql/core'
 import { graphcmsClient } from '~/lib'
 
-type IndexData = TArticle[]
+type IndexData = Articles
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -47,24 +47,19 @@ export default function Index() {
   const articles = useLoaderData<IndexData>()
 
   return (
-    <Layout>
-      <Container>
-        <Hero />
-        {articles.map((article) => {
-          return (
-            <ArticleCard
-              key={article.id}
-              title={article.title}
-              slug={article.slug}
-              readTime={article.readTime}
-              date={article.date}
-              excerpt={article.excerpt}
-              body={article.body}
-            />
-          )
-        })}
-      </Container>
-    </Layout>
+    <>
+      <Hero />
+      <SubHeading
+        title="Projects"
+        excerpt="Things that i build and maintain some of them until now"
+      />
+      <ProjectCard />
+      <SubHeading
+        title="Writings"
+        excerpt="Taking some notes based on my experiences"
+      />
+      <ArticleCard articles={articles} />
+    </>
   )
 }
 

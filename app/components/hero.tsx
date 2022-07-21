@@ -8,7 +8,7 @@ interface HeroProps {
 export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
   return (
     <>
-      <div className="flex relative items-center">
+      <div className="flex relative items-center mx-auto lg:max-w-screen-lg">
         <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
           <div className="flex">
             <img

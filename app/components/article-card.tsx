@@ -19,36 +19,13 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
 }) => {
   return (
     <>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full mx-auto lg:max-w-screen-lg md:px-24 lg:px-8 lg:py-10">
         <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
           {articles.map((item, index) => {
             return <ArticleItem key={item.id || index} item={item} />
           })}
         </div>
       </div>
-      {/* <Link to={slug}>
-        <div className="article-card">
-          <div className="article-content">
-            <div className="article-content-title">
-              <h1>{title}</h1>
-            </div>
-            <div className="article-content-date">
-              <span>{formattedDate.toDateString().substring(4)}</span>
-              <span>
-                <img
-                  className="coffee"
-                  src="/images/icon-coffee.svg"
-                  alt="coffee"
-                />{' '}
-                {minutesRead(body)} minutes read
-              </span>
-            </div>
-            <div className="article-content-post">
-              <p>{excerpt}</p>
-            </div>
-          </div>
-        </div>
-      </Link> */}
     </>
   )
 }

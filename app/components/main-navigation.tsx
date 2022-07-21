@@ -26,7 +26,7 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
           <Link to="/">
             <img
               src="./images/scbrand.png"
-              className="h-28 w-28"
+              className="h-24 w-24"
               alt="scbrand"
             />
             {/* <span className="text-xl text-blue-900 md:text-4xl ml-3 mt-1 font-bold">

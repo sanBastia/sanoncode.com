@@ -61,12 +61,12 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
           <Link
             to={item.slug}
             aria-label="Article"
-            className="inline-block text-2xl font-bold leading-8 text-black transition-colors duration-200 hover:text-blue-900"
+            className="inline-block text-2xl border-b font-bold leading-8 text-black transition-colors duration-200 hover:text-blue-900"
           >
             {item.title}
           </Link>
         </div>
-        <p className="mb-5 h-20 text-gray-700">{item.excerpt}</p>
+        <p className="mb-5 text-gray-700">{item.excerpt}</p>
         <div className="flex items-center">
           <a href="/" aria-label="Author" title="Author" className="mr-3">
             <img

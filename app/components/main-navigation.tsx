@@ -21,17 +21,14 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
 
   return (
     <header className="h-24 sm:h-32 flex items-center w-full mx-auto lg:max-w-screen-lg">
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-2 lg:px-6 flex items-center justify-between">
         <div className="capitalize text-black flex items-center">
           <Link to="/">
             <img
               src="./images/scbrand.png"
-              className="h-24 w-24"
+              className=" h-20 w-20 lg:h-24 lg:w-24"
               alt="scbrand"
             />
-            {/* <span className="text-xl text-blue-900 md:text-4xl ml-3 mt-1 font-bold">
-              sanoncode
-            </span> */}
           </Link>
         </div>
         <div className="flex items-center">

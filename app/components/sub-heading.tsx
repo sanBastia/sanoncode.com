@@ -10,7 +10,7 @@ export const SubHeading: FunctionComponent<SubHeadingProps> = ({
   excerpt,
 }) => {
   return (
-    <div id={title} className="mx-auto scroll-mt-10 lg:max-w-screen-lg">
+    <div className="mx-auto lg:max-w-screen-lg">
       <h1 className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4 text-left text-2xl lg:text-3xl scroll-smooth">
         {title}
       </h1>

@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react'
 import { Link, useLocation } from '@remix-run/react'
 import { Article, Articles } from '~/types'
+import { SubHeading } from './sub-heading'
 
 interface ArticleCardProps {
   articles: Articles
@@ -18,7 +19,11 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
   articles,
 }) => {
   return (
-    <>
+    <div>
+      <SubHeading
+        title="Writings"
+        excerpt="Taking some notes based on my experiences"
+      />
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full mx-auto lg:max-w-screen-lg md:px-24 lg:px-8 lg:py-10">
         <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
           {articles.map((item, index) => {
@@ -26,7 +31,7 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
           })}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -61,7 +66,7 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
           <Link
             to={item.slug}
             aria-label="Article"
-            className="inline-block text-2xl border-b font-bold leading-8 text-black transition-colors duration-200 hover:text-blue-900"
+            className="inline-block text-2xl font-bold leading-8 text-black transition-colors duration-200 hover:text-blue-900"
           >
             {item.title}
           </Link>

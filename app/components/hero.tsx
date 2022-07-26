@@ -49,7 +49,6 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
           </div>
         </div>
       </div>
-      <Divider />
     </>
   )
 }

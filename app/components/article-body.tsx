@@ -6,11 +6,7 @@ interface ArticleBodyProps {
 }
 
 export const ArticleBody: FunctionComponent<ArticleBodyProps> = ({ body }) => {
-  return (
-    <article>
-      <>{markdocRenderReact(body)}</>
-    </article>
-  )
+  return <>{markdocRenderReact(body)}</>
 }
 
 export default ArticleBody

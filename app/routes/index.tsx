@@ -48,17 +48,11 @@ export default function Index() {
 
   return (
     <>
-      <Hero />
-      <SubHeading
-        title="Projects"
-        excerpt="Things that i build and maintain some of them until now"
-      />
-      <ProjectCard />
-      <SubHeading
-        title="Writings"
-        excerpt="Taking some notes based on my experiences"
-      />
-      <ArticleCard articles={articles} />
+      <div className="flex flex-col divide-y divide-double">
+        <Hero />
+        <ProjectCard />
+        <ArticleCard articles={articles} />
+      </div>
     </>
   )
 }

@@ -26,7 +26,7 @@ export const Fence = ({ children, language }: FenceProps) => {
       theme={defaultTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={`fence ${className}`} style={style}>
+        <pre className={`pl-8 my-8 ${className}`} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

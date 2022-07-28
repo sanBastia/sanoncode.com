@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { Link, useLocation } from '@remix-run/react'
+import { Link } from '@remix-run/react'
 import { Article, Articles } from '~/types'
 import { SubHeading } from './sub-heading'
 

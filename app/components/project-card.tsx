@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react'
-import Divider from './divider'
 import SubHeading from './sub-heading'
 
 interface ProjectCardProps {}

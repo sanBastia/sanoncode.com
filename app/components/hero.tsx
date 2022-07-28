@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react'
-import Divider from './divider'
 
 interface HeroProps {
   children?: React.ReactNode

@@ -26,7 +26,7 @@ export const Fence = ({ children, language }: FenceProps) => {
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className={`p-2 my-4 md:p-4 block text-xs lg:text-sm ${className}`}
+          className={`p-2 my-4 md:p-4 text-xs lg:text-sm ${className}`}
           style={style}
         >
           {tokens.map((line, i) => (

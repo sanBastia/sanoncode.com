@@ -37,7 +37,7 @@ export const loader: LoaderFunction = async () => {
 // https://remix.run/api/conventions#meta
 export const meta: MetaFunction = () => {
   return {
-    title: 'Sanoncode',
+    title: 'Hi, I am San Sebastian',
     description: 'San Sebastian personal website',
   }
 }

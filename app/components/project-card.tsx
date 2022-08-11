@@ -5,7 +5,7 @@ interface ProjectCardProps {}
 
 export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
   return (
-    <div>
+    <section id="projects">
       <SubHeading
         title="Projects"
         excerpt="Things that i build and maintain some of them until now"
@@ -37,7 +37,7 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

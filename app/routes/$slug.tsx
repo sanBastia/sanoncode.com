@@ -51,7 +51,7 @@ export default function ArticleSlug() {
   const formattedDate = new Date(data.article.date)
   return (
     <main>
-      <div className="px-4 py-4  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
+      <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
         <div className="max-w-xl mb-10 mx-auto text-center lg:max-w-2xl md:mb-12">
           <div>
             <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-400 hover:text-blue-900 uppercase">

@@ -14,7 +14,7 @@ import {
 } from '@remix-run/react'
 
 import styles from '~/styles/output.css'
-import { MainNavigation } from './components'
+import { Footer, MainNavigation } from './components'
 
 // https://remix.run/api/app#links
 export const links: LinksFunction = () => {
@@ -122,7 +122,7 @@ function Document({
 }) {
   const data = useLoaderData()
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -152,6 +152,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <main className="bg-white relative overflow-auto h-screen">
       <MainNavigation />
       <div className="container mx-auto px-4">{children}</div>
+      <Footer />
     </main>
   )
 }

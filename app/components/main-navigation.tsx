@@ -32,19 +32,19 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
           </Link>
         </div>
         <div className="flex items-center">
-          <nav className="capitalize text-lg md:text-xl flex flex-row justify-start">
-            <a
-              href="#projects"
+          <nav className="capitalize text-sm md:text-xl flex flex-row justify-start">
+            <Link
+              to="#projects"
               className="px-2 flex text-black hover:text-blue-900"
             >
               Projects
-            </a>
-            <a
-              href="#writings"
+            </Link>
+            <Link
+              to="#writings"
               className="px-2 flex text-black hover:text-blue-900"
             >
               Writings
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

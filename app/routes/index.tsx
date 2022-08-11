@@ -1,18 +1,12 @@
-import type { MetaFunction, LoaderFunction } from 'remix'
-import { useLoaderData, json, Link } from 'remix'
-import {
-  ArticleCard,
-  Container,
-  Divider,
-  Hero,
-  Layout,
-  SubNavigation,
-} from '~/components'
-import { TArticle } from '~/types'
+import type { LoaderFunction, MetaFunction } from '@remix-run/node'
+import { json } from '@remix-run/node'
+import { useLoaderData } from '@remix-run/react'
+import { ArticleCard, Hero, ProjectCard, SubHeading } from '~/components'
+import { Articles } from '~/types'
 import { gql } from '@urql/core'
 import { graphcmsClient } from '~/lib'
 
-type IndexData = TArticle[]
+type IndexData = Articles
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -43,7 +37,7 @@ export const loader: LoaderFunction = async () => {
 // https://remix.run/api/conventions#meta
 export const meta: MetaFunction = () => {
   return {
-    title: 'Sanoncode',
+    title: 'Hi, I am San Sebastian',
     description: 'San Sebastian personal website',
   }
 }
@@ -53,24 +47,13 @@ export default function Index() {
   const articles = useLoaderData<IndexData>()
 
   return (
-    <Layout>
-      <Container>
+    <>
+      <div className="flex flex-col divide-y divide-double">
         <Hero />
-        {articles.map((article) => {
-          return (
-            <ArticleCard
-              key={article.id}
-              title={article.title}
-              slug={article.slug}
-              readTime={article.readTime}
-              date={article.date}
-              excerpt={article.excerpt}
-              body={article.body}
-            />
-          )
-        })}
-      </Container>
-    </Layout>
+        <ProjectCard />
+        <ArticleCard articles={articles} />
+      </div>
+    </>
   )
 }
 

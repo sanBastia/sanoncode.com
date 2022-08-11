@@ -1,37 +1,40 @@
+import type { LinksFunction } from '@remix-run/node'
+import { json, LoaderFunction } from '@remix-run/node'
+
 import {
-  json,
   Link,
   Links,
   LiveReload,
-  LoaderFunction,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useCatch,
   useLoaderData,
-} from 'remix'
-import type { LinksFunction } from 'remix'
+} from '@remix-run/react'
 
-import globalStylesUrl from '~/styles/global.css'
-import darkStylesUrl from '~/styles/dark.css'
+import styles from '~/styles/output.css'
+import { Footer, MainNavigation } from './components'
 
 // https://remix.run/api/app#links
 export const links: LinksFunction = () => {
   return [
     {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap',
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
     },
     {
       rel: 'stylesheet',
-      href: globalStylesUrl,
+      href: 'https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap',
     },
-    // {
-    //   rel: 'stylesheet',
-    //   href: darkStylesUrl,
-    //   media: '(prefers-color-scheme: dark)',
-    // },
+    {
+      rel: 'stylesheet',
+      href: styles,
+    },
   ]
 }
 
@@ -104,7 +107,10 @@ export function CatchBoundary() {
 }
 export const loader: LoaderFunction = async () => {
   return json({
-    ENV: { NODE_ENV: process.env.NODE_ENV },
+    ENV: {
+      GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
+      NODE_ENV: process.env.NODE_ENV,
+    },
   })
 }
 function Document({
@@ -116,7 +122,7 @@ function Document({
 }) {
   const data = useLoaderData()
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -143,38 +149,10 @@ function Document({
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="remix-app">
-      <header className="remix-app__header">
-        <div className="container remix-app__header-content">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
-            <p className="brand">Sanoncode</p>
-          </Link>
-          <label className="switch">
-            <input type="checkbox" />
-            <span className="slider round"></span>
-          </label>
-        </div>
-      </header>
-
-      <div className="remix-app__main">
-        <div className="container remix-app__main-content">{children}</div>
-      </div>
-
-      <footer className="remix-app__footer">
-        <p className="container remix-app__footer-content">
-          <a href="https://github.com/sanBastia" target="_blank">
-            Github
-          </a>{' '}
-          |{' '}
-          <a href="https://twitter.com/" target="_blank">
-            Twitter
-          </a>{' '}
-          |{' '}
-          <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
-            Linkedin{' '}
-          </a>
-        </p>
-      </footer>
-    </div>
+    <main className="bg-white relative overflow-auto h-screen">
+      <MainNavigation />
+      <div className="container mx-auto px-4">{children}</div>
+      <Footer />
+    </main>
   )
 }

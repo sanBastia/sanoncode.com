@@ -3,7 +3,6 @@ import Markdoc, { Tag, RenderableTreeNode } from '@markdoc/markdoc'
 
 import React from 'react'
 
-import { useState, useEffect } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import type {
   Language as PrismLanguage,
@@ -26,7 +25,10 @@ export const Fence = ({ children, language }: FenceProps) => {
       theme={defaultTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={`fence ${className}`} style={style}>
+        <pre
+          className={`p-2 my-4 md:p-4 block text-xs lg:text-sm ${className}`}
+          style={style}
+        >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

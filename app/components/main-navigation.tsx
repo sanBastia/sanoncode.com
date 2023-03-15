@@ -1,12 +1,13 @@
 import { FunctionComponent } from 'react'
 import { Link, useLocation } from '@remix-run/react'
-import { BsPencil, BsLaptop } from 'react-icons/bs'
+import { Theme, useTheme } from '~/utils/theme-provider'
 
 interface MainNavigationProps {}
 
 export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
   const location = useLocation()
   const { pathname } = location
+  const [, setTheme] = useTheme()
 
   const MainNavigationLinks = [
     {
@@ -18,6 +19,11 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
       text: 'Projects',
     },
   ]
+  const toggleTheme = () => {
+    setTheme((prevTheme) =>
+      prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+    )
+  }
 
   return (
     <header className="h-24 sm:h-32 flex items-center w-full mx-auto lg:max-w-screen-lg">
@@ -45,6 +51,7 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
             >
               Writings
             </Link>
+            <button onClick={toggleTheme}>Toggle</button>
           </nav>
         </div>
       </div>

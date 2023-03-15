@@ -16,7 +16,7 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
             />
           </div>
           <div className="flex flex-col">
-            <h1 className="text-2xl md:text-5xl mt-6 mb-2 font-bold text-center text-black">
+            <h1 className="text-2xl md:text-5xl mt-6 mb-2 font-bold text-center text-gray-900 dark:text-white">
               Hi, I&#x27;m San Sebastian 🤘
             </h1>
             <p className="text-lg md:text-3xl mx-auto text-center py-2 text-gray-600">

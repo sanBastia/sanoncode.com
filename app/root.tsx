@@ -1,5 +1,11 @@
 import type { LinksFunction } from '@remix-run/node'
 import { json, LoaderFunction } from '@remix-run/node'
+import clsx from 'clsx'
+import {
+  NonFlashOfWrongThemeEls,
+  ThemeProvider,
+  useTheme,
+} from '~/utils/theme-provider'
 
 import {
   Link,
@@ -14,6 +20,7 @@ import {
 } from '@remix-run/react'
 
 import styles from '~/styles/output.css'
+import darkStyles from '../styles/dark.css'
 import { Footer, MainNavigation } from './components'
 
 // https://remix.run/api/app#links
@@ -35,6 +42,11 @@ export const links: LinksFunction = () => {
       rel: 'stylesheet',
       href: styles,
     },
+    {
+      rel: 'stylesheet',
+      href: darkStyles,
+      media: '(prefers-color-scheme: dark)',
+    },
   ]
 }
 
@@ -42,11 +54,13 @@ export const links: LinksFunction = () => {
 // https://remix.run/api/conventions#route-filenames
 export default function App() {
   return (
-    <Document>
-      <Layout>
-        <Outlet />
-      </Layout>
-    </Document>
+    <ThemeProvider>
+      <Document>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </Document>
+    </ThemeProvider>
   )
 }
 
@@ -121,14 +135,17 @@ function Document({
   title?: string
 }) {
   const data = useLoaderData()
+  const [theme] = useTheme()
+
   return (
-    <html className="scroll-smooth" lang="en">
+    <html lang="en" className={clsx(theme)}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
+        <NonFlashOfWrongThemeEls />
       </head>
       <body>
         {children}
@@ -149,7 +166,7 @@ function Document({
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="bg-white relative overflow-auto h-screen">
+    <main className="bg-white relative overflow-auto h-screen bg-white dark:bg-gray-900">
       <MainNavigation />
       <div className="container mx-auto px-4">{children}</div>
       <Footer />

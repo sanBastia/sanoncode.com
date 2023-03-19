@@ -1,3 +1,4 @@
+import { Github, Linkedin } from 'lucide-react'
 import { FunctionComponent } from 'react'
 
 interface FooterProps {}
@@ -10,15 +11,16 @@ export const Footer: FunctionComponent<FooterProps> = () => {
           <p className="text-sm text-gray-500">
             © Copyright 2022 San Sebastian. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 mt-4 lg:mt-0 mx-auto lg:mx-0">
+          <div className="flex justify-center gap-4">
             <a href="https://github.com/sanBastia" target="_blank">
-              <img src="/images/icon-github.svg" alt="GitHub" />
+              <Github className="text-gray-900 dark:text-[#CBE4DE]" size={24} />
             </a>
-            <a href="https://twitter.com/" target="_blank">
-              <img src="/images/icon-twitter.svg" alt="Twitter" />
-            </a>
+
             <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
-              <img src="/images/icon-linkedin.svg" alt="Linkedin" />
+              <Linkedin
+                className="text-gray-900 dark:text-[#CBE4DE]"
+                size={24}
+              />
             </a>
           </div>
         </div>

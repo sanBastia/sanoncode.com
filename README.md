@@ -29,3 +29,5 @@ If you're used to using the `vercel dev` command provided by [Vercel CLI](https:
 # Reference
 
 dark light mode => https://www.mattstobbs.com/remix-dark-mode/#0-adding-dark-mode-without-toggle
+
+use sound => https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/

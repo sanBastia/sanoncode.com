@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import { Linkedin, Github, Link } from 'lucide-react'
 
 interface HeroProps {
   children?: React.ReactNode
@@ -15,34 +16,23 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
               className="rounded-full h-32 w-32 mx-auto"
             />
           </div>
-          <div className="flex flex-col">
-            <h1 className="text-2xl md:text-5xl mt-6 mb-2 font-bold text-center text-gray-900 dark:text-white">
+          <div className="flex flex-col mb-4">
+            <h1 className="text-2xl md:text-5xl mt-6 mb-2 font-bold text-center text-gray-900 dark:text-[#CBE4DE]">
               Hi, I&#x27;m San Sebastian 🤘
             </h1>
-            <p className="text-lg md:text-3xl mx-auto text-center py-2 text-gray-600">
+            <p className="text-lg md:text-3xl mx-auto text-center py-2 text-gray-600 dark:text-[#cbe4de8f]">
               Building digital products, brands, and experiences.
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-4">
             <a href="https://github.com/sanBastia" target="_blank">
-              <img
-                className="p-4 flex"
-                src="/images/icon-github.svg"
-                alt="GitHub"
-              />
+              <Github className="text-gray-900 dark:text-[#CBE4DE]" size={24} />
             </a>
-            <a href="https://twitter.com/" target="_blank">
-              <img
-                className="p-4 flex"
-                src="/images/icon-twitter.svg"
-                alt="Twitter"
-              />
-            </a>
+
             <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
-              <img
-                className="p-4 flex"
-                src="/images/icon-linkedin.svg"
-                alt="Linkedin"
+              <Linkedin
+                className="text-gray-900 dark:text-[#CBE4DE]"
+                size={24}
               />
             </a>
           </div>

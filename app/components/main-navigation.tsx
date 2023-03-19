@@ -1,13 +1,17 @@
 import { FunctionComponent } from 'react'
 import { Link, useLocation } from '@remix-run/react'
 import { Theme, useTheme } from '~/utils/theme-provider'
+import { GlassWater, Sun, Moon } from 'lucide-react'
+import useSound from 'use-sound'
+import switchSound from '../../public/sounds/switchsound.mp3'
 
 interface MainNavigationProps {}
 
 export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
   const location = useLocation()
   const { pathname } = location
-  const [, setTheme] = useTheme()
+  const [theme, setTheme] = useTheme()
+  const [play] = useSound(switchSound)
 
   const MainNavigationLinks = [
     {
@@ -23,6 +27,7 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
     setTheme((prevTheme) =>
       prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
     )
+    play()
   }
 
   return (
@@ -30,28 +35,38 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
       <div className="container mx-auto px-2 lg:px-6 flex items-center justify-between">
         <div className="capitalize text-black flex items-center">
           <Link to="/">
-            <img
-              src="./images/scbrand.png"
+            {/* <img
+              src="./images/scbrand.svg"
               className=" h-20 w-20 lg:h-24 lg:w-24"
               alt="scbrand"
+            /> */}
+            <GlassWater
+              className="text-gray-900 dark:text-[#CBE4DE]"
+              size={32}
             />
           </Link>
         </div>
         <div className="flex items-center">
-          <nav className="capitalize text-sm md:text-xl flex flex-row justify-start">
+          <nav className="capitalize text-sm md:text-xl flex flex-row justify-start gap-2 items-center">
             <Link
               to="#projects"
-              className="px-2 flex text-black hover:text-blue-900"
+              className="px-2 flex text-[#202945] hover:text-blue-900  dark:text-white"
             >
               Projects
             </Link>
             <Link
               to="#writings"
-              className="px-2 flex text-black hover:text-blue-900"
+              className="px-2 flex text-[#202945] hover:text-blue-900  dark:text-white"
             >
               Writings
             </Link>
-            <button onClick={toggleTheme}>Toggle</button>
+            <button onClick={toggleTheme}>
+              {theme === 'light' ? (
+                <Moon className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
+              ) : theme === 'dark' ? (
+                <Sun className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
+              ) : null}
+            </button>
           </nav>
         </div>
       </div>

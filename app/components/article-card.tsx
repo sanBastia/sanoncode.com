@@ -56,7 +56,7 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
         <div className="mb-2">
           <Link
             to={item.slug}
-            className="text-xs font-semibold tracking-wide uppercase transition-colors duration-200 text-blue-400 hover:text-blue-900"
+            className="text-xs font-semibold tracking-wide uppercase transition-colors duration-200 text-blue-400 hover:text-blue-900 dark:text-[#0E8388]"
             aria-label="Category"
           >
             Javascript
@@ -66,12 +66,14 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
           <Link
             to={item.slug}
             aria-label="Article"
-            className="inline-block text-lg lg:text-2xl font-bold  leading-5 lg:leading-8 text-black transition-colors duration-200 hover:text-blue-900"
+            className="inline-block text-lg lg:text-2xl font-bold  leading-5 lg:leading-8 text-black transition-colors duration-200 hover:text-blue-900 dark:text-[#CBE4DE]"
           >
             {item.title}
           </Link>
         </div>
-        <p className="mb-5 text-sm text-gray-700">{item.excerpt}</p>
+        <p className="mb-5 text-sm text-gray-700 dark:text-[#cbe4de8f]">
+          {item.excerpt}
+        </p>
         <div className="flex items-center">
           <a href="/" aria-label="Author" title="Author" className="mr-3">
             <img
@@ -85,11 +87,11 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
               href="/"
               aria-label="Author"
               title="Author"
-              className="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className="font-semibold text-gray-800 dark:text-[#CBE4DE]"
             >
               San Sebastian
             </a>
-            <p className="text-sm font-medium leading-4 text-gray-600">
+            <p className="text-sm font-medium leading-4 text-gray-600 dark:text-[#cbe4de8f]">
               Author
             </p>
           </div>

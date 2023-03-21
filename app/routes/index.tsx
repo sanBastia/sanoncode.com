@@ -48,7 +48,7 @@ export default function Index() {
 
   return (
     <>
-      <div className="flex flex-col divide-y divide-double">
+      <div className="flex flex-col divide-y divide-double divide-gray-900 dark:divide-white">
         <Hero />
         <ProjectCard />
         <ArticleCard articles={articles} />

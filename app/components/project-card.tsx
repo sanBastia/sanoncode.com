@@ -15,12 +15,12 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
         <div className="grid gap-8 row-gap-5 lg:grid-cols-3">
           <div className="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
             <img
-              className="object-cover w-full h-28 rounded md:h-58 xl:h-40 border-b"
-              src="./images/fujiboxlogo.png"
+              className="object-cover w-full rounded border-b"
+              src="./images/fujiboxlogo.svg"
               alt=""
             />
 
-            <div className="relative p-5 bg-white rounded-sm dark:bg-[#CBE4DE]">
+            <div className="relative p-5 bg-white rounded-sm">
               <div className="flex flex-col mb-2 lg:items-center lg:flex-row">
                 <h6 className="font-semibold leading-5">Fujibox</h6>
               </div>

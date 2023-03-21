@@ -1,4 +1,4 @@
-import { json, LoaderFunction } from '@remix-run/node'
+import { json, LoaderFunction, MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import { gql } from 'urql'
 import { ArticleBody } from '~/components'
@@ -9,6 +9,19 @@ import Markdoc, { RenderableTreeNode } from '@markdoc/markdoc'
 type ArticleSlugData = {
   article: Article
   content: RenderableTreeNode
+}
+export const meta: MetaFunction = ({
+  data: { article },
+}: {
+  data: { article: any }
+}) => {
+  const articleTitle = `${article.title}`
+  const articleDesc = `${article.excerpt}`
+
+  return {
+    title: articleTitle,
+    description: articleDesc,
+  }
 }
 
 export const loader: LoaderFunction = async ({ params }) => {

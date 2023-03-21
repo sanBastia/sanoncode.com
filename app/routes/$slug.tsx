@@ -4,7 +4,8 @@ import { gql } from 'urql'
 import { ArticleBody } from '~/components'
 import { graphcmsClient, markdocParseTransform } from '~/lib'
 import { Article } from '~/types'
-import Markdoc, { RenderableTreeNode } from '@markdoc/markdoc'
+import { RenderableTreeNode } from '@markdoc/markdoc'
+import { Coffee, CalendarDays } from 'lucide-react'
 
 type ArticleSlugData = {
   article: Article
@@ -67,21 +68,23 @@ export default function ArticleSlug() {
       <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
         <div className="max-w-xl mb-10 mx-auto text-center lg:max-w-2xl md:mb-12">
           <div>
-            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-400 hover:text-blue-900 uppercase">
+            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold text-blue-400 hover:text-blue-900 uppercase">
               javascript
             </p>
           </div>
-          <h1 className="mb-2 text-4xl lg:text-6xl font-bold leading-none tracking-tight text-gray-900 md:mx-auto">
+          <h1 className="mb-2 text-4xl lg:text-6xl font-bold leading-relaxed tracking-normal text-gray-900 md:mx-auto dark:text-[#CBE4DE]">
             {data.article.title}
           </h1>
-          <div className="max-w-lg flex mx-auto justify-center gap-4">
-            <span className="mr-10">
+          <div className="max-w-lg py-4 flex mx-auto justify-center gap-6">
+            <span className="flex gap-1">
+              <CalendarDays />
               {formattedDate.toDateString().substring(4)}
             </span>
-            <span>
-              <img src="/images/icon-coffee.svg" alt="coffee" />
+
+            <span className="flex gap-1">
+              <Coffee />
+              {minutesRead(data.article.body)} minutes read
             </span>
-            <span>{minutesRead(data.article.body)} minutes read</span>
           </div>
           {/* <p className="text-base text-gray-700  bg-slate-200 md:text-lg">
             {data.article.excerpt}

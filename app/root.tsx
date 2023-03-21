@@ -166,7 +166,7 @@ function Document({
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="bg-[#CBE4DE] relative overflow-auto h-screen dark:bg-[#2C3333]">
+    <main className="relative overflow-auto h-screen dark:bg-[#2C3333]">
       <MainNavigation />
       <div className="container mx-auto px-4">{children}</div>
       <Footer />

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useState } from 'react'
 import { Link, useLocation } from '@remix-run/react'
 import { Theme, useTheme } from '~/utils/theme-provider'
 import { GlassWater, Sun, Moon } from 'lucide-react'
@@ -10,7 +10,8 @@ interface MainNavigationProps {}
 export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
   const location = useLocation()
   const { pathname } = location
-  const [theme, setTheme] = useTheme()
+  const [, setTheme] = useTheme()
+  const [icon, setIcon] = useState(true)
   const [play] = useSound(switchSound)
 
   const MainNavigationLinks = [
@@ -27,6 +28,7 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
     setTheme((prevTheme) =>
       prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
     )
+    setIcon(!icon)
     play()
   }
 
@@ -61,11 +63,11 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
               Writings
             </Link>
             <button onClick={toggleTheme}>
-              {theme === 'light' ? (
+              {icon ? (
                 <Moon className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
-              ) : theme === 'dark' ? (
+              ) : (
                 <Sun className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
-              ) : null}
+              )}
             </button>
           </nav>
         </div>

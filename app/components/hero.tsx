@@ -17,7 +17,7 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <h1 className="text-2xl md:text-5xl mt-6 mb-2 font-bold text-center text-gray-900 dark:text-[#CBE4DE]">
+            <h1 className="text-2xl md:text-5xl mt-6 mb-2 font-bold text-center text-gray-900 dark:text-textDark">
               Hi, I&#x27;m San Sebastian 🤘
             </h1>
             <p className="text-lg md:text-3xl mx-auto text-center py-2 text-gray-600 dark:text-[#cbe4de8f]">
@@ -26,12 +26,12 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
           </div>
           <div className="flex justify-center gap-4">
             <a href="https://github.com/sanBastia" target="_blank">
-              <Github className="text-gray-900 dark:text-[#CBE4DE]" size={24} />
+              <Github className="text-gray-900 dark:text-textDark" size={24} />
             </a>
 
             <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
               <Linkedin
-                className="text-gray-900 dark:text-[#CBE4DE]"
+                className="text-gray-900 dark:text-textDark"
                 size={24}
               />
             </a>

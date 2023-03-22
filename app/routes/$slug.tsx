@@ -72,7 +72,7 @@ export default function ArticleSlug() {
               javascript
             </p>
           </div>
-          <h1 className="mb-2 text-4xl lg:text-6xl font-bold leading-relaxed tracking-normal text-gray-900 md:mx-auto dark:text-[#CBE4DE]">
+          <h1 className="mb-2 text-4xl lg:text-6xl font-bold leading-relaxed tracking-normal text-gray-900 md:mx-auto dark:text-textDark">
             {data.article.title}
           </h1>
           <div className="max-w-lg py-4 flex mx-auto justify-center gap-6">

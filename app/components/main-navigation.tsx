@@ -39,7 +39,7 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
               alt="scbrand"
             /> */}
             <GlassWater
-              className="text-gray-900 dark:text-[#CBE4DE]"
+              className="text-gray-900 dark:text-textDark"
               size={32}
             />
           </Link>
@@ -60,9 +60,9 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
             </Link>
             <button onClick={toggleTheme}>
               {theme === 'dark' ? (
-                <Sun className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
+                <Sun className="text-gray-900 dark:text-textDark" size={28} />
               ) : (
-                <Moon className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
+                <Moon className="text-gray-900 dark:text-textDark" size={28} />
               )}
             </button>
           </nav>

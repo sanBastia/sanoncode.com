@@ -66,7 +66,7 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
           <Link
             to={item.slug}
             aria-label="Article"
-            className="inline-block text-lg lg:text-2xl font-bold  leading-5 lg:leading-8 text-black transition-colors duration-200 hover:text-blue-900 dark:text-[#CBE4DE]"
+            className="inline-block text-lg lg:text-2xl font-bold  leading-5 lg:leading-8 text-black transition-colors duration-200 hover:text-blue-900 dark:text-textDark"
           >
             {item.title}
           </Link>
@@ -87,7 +87,7 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
               href="/"
               aria-label="Author"
               title="Author"
-              className="font-semibold text-gray-800 dark:text-[#CBE4DE]"
+              className="font-semibold text-gray-800 dark:text-textDark"
             >
               San Sebastian
             </a>

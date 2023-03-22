@@ -13,12 +13,12 @@ export const Footer: FunctionComponent<FooterProps> = () => {
           </p>
           <div className="flex justify-center gap-4">
             <a href="https://github.com/sanBastia" target="_blank">
-              <Github className="text-gray-900 dark:text-[#CBE4DE]" size={24} />
+              <Github className="text-gray-900 dark:text-textDark" size={24} />
             </a>
 
             <a href="https://www.linkedin.com/in/sanbastia/" target="_blank">
               <Linkedin
-                className="text-gray-900 dark:text-[#CBE4DE]"
+                className="text-gray-900 dark:text-textDark"
                 size={24}
               />
             </a>

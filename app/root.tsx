@@ -3,6 +3,7 @@ import { json, LoaderFunction } from '@remix-run/node'
 import clsx from 'clsx'
 import {
   NonFlashOfWrongThemeEls,
+  Theme,
   ThemeProvider,
   useTheme,
 } from '~/utils/theme-provider'
@@ -20,8 +21,26 @@ import {
 } from '@remix-run/react'
 
 import styles from '~/styles/output.css'
-import darkStyles from '../styles/dark.css'
+
 import { Footer, MainNavigation } from './components'
+import { getThemeSession } from './utils/theme.server'
+
+export type LoaderData = {
+  theme: Theme | null
+}
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request)
+
+  return json({
+    ENV: {
+      GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
+      NODE_ENV: process.env.NODE_ENV,
+      SANONCODE_SECRET_KEY: process.env.SANONCODE_SECRET_KEY,
+    },
+    theme: themeSession.getTheme(),
+  })
+}
 
 // https://remix.run/api/app#links
 export const links: LinksFunction = () => {
@@ -42,19 +61,15 @@ export const links: LinksFunction = () => {
       rel: 'stylesheet',
       href: styles,
     },
-    {
-      rel: 'stylesheet',
-      href: darkStyles,
-      media: '(prefers-color-scheme: dark)',
-    },
   ]
 }
 
 // https://remix.run/api/conventions#default-export
 // https://remix.run/api/conventions#route-filenames
 export default function App() {
+  const data = useLoaderData<LoaderData>()
   return (
-    <ThemeProvider>
+    <ThemeProvider specifiedTheme={data.theme}>
       <Document>
         <Layout>
           <Outlet />
@@ -119,14 +134,7 @@ export function CatchBoundary() {
     </Document>
   )
 }
-export const loader: LoaderFunction = async () => {
-  return json({
-    ENV: {
-      GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
-      NODE_ENV: process.env.NODE_ENV,
-    },
-  })
-}
+
 function Document({
   children,
   title,
@@ -145,7 +153,7 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
-        <NonFlashOfWrongThemeEls />
+        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
       <body>
         {children}

@@ -8,10 +8,7 @@ import switchSound from '../../public/sounds/switchsound.mp3'
 interface MainNavigationProps {}
 
 export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
-  const location = useLocation()
-  const { pathname } = location
-  const [, setTheme] = useTheme()
-  const [icon, setIcon] = useState(true)
+  const [theme, setTheme] = useTheme()
   const [play] = useSound(switchSound)
 
   const MainNavigationLinks = [
@@ -28,10 +25,9 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
     setTheme((prevTheme) =>
       prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
     )
-    setIcon(!icon)
     play()
   }
-
+  console.log({ theme })
   return (
     <header className="h-24 sm:h-32 flex items-center w-full mx-auto lg:max-w-screen-lg">
       <div className="container mx-auto px-2 lg:px-6 flex items-center justify-between">
@@ -63,10 +59,10 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
               Writings
             </Link>
             <button onClick={toggleTheme}>
-              {icon ? (
-                <Moon className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
-              ) : (
+              {theme === 'dark' ? (
                 <Sun className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
+              ) : (
+                <Moon className="text-gray-900 dark:text-[#CBE4DE]" size={28} />
               )}
             </button>
           </nav>

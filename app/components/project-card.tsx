@@ -22,7 +22,9 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
 
             <div className="relative p-5 bg-white rounded-sm">
               <div className="flex flex-col mb-2 lg:items-center lg:flex-row">
-                <h6 className="font-semibold leading-5">Fujibox</h6>
+                <h6 className="font-semibold leading-5 dark:text-black">
+                  Fujibox
+                </h6>
               </div>
               <p className="mb-2 text-sm text-gray-900">
                 A semi-commerce website for packaging company

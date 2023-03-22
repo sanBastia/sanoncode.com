@@ -6,9 +6,10 @@
   html {
     font-family: 'Kanit', sans-serif;
     scroll-behavior: smooth;
+  }
+  html.light {
     --text-colour: black;
     --background-colour: white;
-
     color: var(--text-colour);
     background-color: var(--background-colour);
   }
@@ -16,5 +17,7 @@
   html.dark {
     --text-colour: white;
     --background-colour: black;
+    color: var(--text-colour);
+    background-color: var(--background-colour);
   }
 }

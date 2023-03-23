@@ -27,7 +27,7 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
     )
     play()
   }
-  console.log({ theme })
+
   return (
     <header className="h-24 sm:h-32 flex items-center w-full mx-auto lg:max-w-screen-lg">
       <div className="container mx-auto px-2 lg:px-6 flex items-center justify-between">

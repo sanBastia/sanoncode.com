@@ -9,9 +9,9 @@ if (!sessionSecret) {
 
 const themeStorage = createCookieSessionStorage({
   cookie: {
-    name: 'my_remix_theme',
+    name: '_sanoncode_session',
     secure: true,
-    secrets: [sessionSecret],
+    secrets: [String(sessionSecret)],
     sameSite: 'lax',
     path: '/',
     httpOnly: true,

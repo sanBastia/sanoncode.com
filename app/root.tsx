@@ -134,7 +134,6 @@ export function CatchBoundary() {
     </Document>
   )
 }
-
 function Document({
   children,
   title,

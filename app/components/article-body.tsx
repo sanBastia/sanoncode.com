@@ -7,7 +7,7 @@ interface ArticleBodyProps {
 
 export const ArticleBody: FunctionComponent<ArticleBodyProps> = ({ body }) => {
   return (
-    <div className="max-w-2xl mx-auto prose md:prose-lg lg:prose-xl dark:text-textDark dark:prose-invert">
+    <div className="max-w-2xl mx-auto prose md:prose-lg lg:prose-xl dark:prose-invert">
       {markdocRenderReact(body)}
     </div>
   )

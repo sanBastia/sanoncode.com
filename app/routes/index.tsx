@@ -27,7 +27,7 @@ export const loader: LoaderFunction = async () => {
     }
   `
 
-  const response = await graphcmsClient.query(allArticlesQuery).toPromise()
+  const response = await graphcmsClient.query(allArticlesQuery,{}).toPromise()
   const articles = response.data.articles
 
   // https://remix.run/api/remix#json

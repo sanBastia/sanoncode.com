@@ -27,21 +27,21 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
                 </h6>
               </div>
               <p className="mb-2 text-sm text-gray-900">
-                A semi custom box manufactur project by Fujibox that provide a service for retail or coorporate
-              </p>
+                customade box service by Fujibox that help brands or retails in printing and packaging needs
+                </p>
               <a
                 href="https://pesanankhusus.fujiboxglobal.com"
                 target="_BLANK"
                 aria-label=""
                 className="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-blue-900"
               >
-                Learn more
+                Take a look
               </a>
             </div>
           </div>
           <div className="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
             <img
-              className="object-cover w-full rounded border-b"
+              className="object-cover w-full rounded border-b h-32"
               src="./images/fujibox-lgcy.png"
               alt="fujibox-legacy"
             />
@@ -53,7 +53,7 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
                 </h6>
               </div>
               <p className="mb-2 text-sm text-gray-900">
-                A semi commerce project by Fujibox that distribute packaging product for retail or coorporate
+                A semi-commerce by Fujibox that sell packaging product for retails in baking industry
               </p>
               <a
                 href="https://legacy.fujiboxglobal.com"
@@ -61,7 +61,7 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
                 aria-label=""
                 className="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-blue-900"
               >
-                Learn more
+                Take a look
               </a>
             </div>
           </div>

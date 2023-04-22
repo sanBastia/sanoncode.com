@@ -1,4 +1,4 @@
-import { LoaderFunction, json } from "@remix-run/node";
+import { LoaderFunction, MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 import { ArticleCard } from "~/components";
@@ -11,6 +11,13 @@ type writingsData = Articles
 // you can connect to a database or run any server side code you want right next
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Writings',
+    description: 'San Sebastian personal website',
+  }
+}
+
 export const loader: LoaderFunction = async () => {
   const allArticlesQuery = gql`
     query AllArticles {

@@ -39,6 +39,8 @@ export const meta: MetaFunction = () => {
   return {
     title: 'Hi, I am San Sebastian 🤘',
     description: 'San Sebastian personal website',
+    viewport: "width=device-width,initial-scale=1", 
+    "og:image": "https://sanoncode.com/images/avatar.jpg",
   }
 }
 

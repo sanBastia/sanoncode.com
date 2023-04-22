@@ -13,12 +13,12 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
 
   const MainNavigationLinks = [
     {
-      to: '/',
-      text: 'Writing',
+      link: '/writings',
+      title: 'Writings',
     },
     {
-      to: '/projects',
-      text: 'Projects',
+      link: '/projects',
+      title: 'Projects',
     },
   ]
   const toggleTheme = () => {
@@ -46,18 +46,18 @@ export const MainNavigation: FunctionComponent<MainNavigationProps> = () => {
         </div>
         <div className="flex items-center">
           <nav className="capitalize text-sm md:text-xl flex flex-row justify-start gap-2 items-center">
-            <Link
-              to="#projects"
-              className="px-2 flex text-[#202945] hover:text-blue-900  dark:text-white"
-            >
-              Projects
-            </Link>
-            <Link
-              to="#writings"
-              className="px-2 flex text-[#202945] hover:text-blue-900  dark:text-white"
-            >
-              Writings
-            </Link>
+            {MainNavigationLinks.map((item)=>{
+              return (
+                <Link
+                key={item.title}
+                to={item.link}
+                className="px-2 flex text-[#202945] hover:text-blue-900  dark:text-white"
+              >
+                {item.title}
+              </Link>
+              )
+            })}
+      
             <button onClick={toggleTheme}>
               {theme === 'dark' ? (
                 <Sun className="text-gray-900 dark:text-textDark" size={28} />

@@ -4,7 +4,7 @@ import { useLoaderData } from '@remix-run/react'
 import { ArticleCard, Hero, ProjectCard, SubHeading } from '~/components'
 import { Articles } from '~/types'
 import { gql } from '@urql/core'
-import { graphcmsClient } from '~/lib'
+import { graphcmsClient } from '~/libs'
 
 type IndexData = Articles
 

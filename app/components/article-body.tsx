@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { markdocRenderReact } from '~/lib'
+import { markdocRenderReact } from '~/libs'
 
 interface ArticleBodyProps {
   body: any

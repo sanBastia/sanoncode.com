@@ -24,7 +24,7 @@ export const ArticleCard: FunctionComponent<ArticleCardProps> = ({
         title="Writings"
         excerpt="Taking some notes based on my experiences"
       />
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-lg md:px-24 lg:px-8 lg:py-10">
+      <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-lg md:px-24 lg:px-8 lg:py-10">
         <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
           {articles.map((item, index) => {
             return <ArticleItem key={item.id || index} item={item} />
@@ -42,6 +42,7 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
   const formattedDate = new Date(item.date)
   const month = formattedDate.toString().split(' ')[1]
   const date = formattedDate.toString().split(' ')[2]
+
   return (
     <div className="flex">
       <div className="pt-1 mr-6 text-center">
@@ -54,17 +55,15 @@ const ArticleItem: FunctionComponent<ArticleItemProps> = ({ item }) => {
       </div>
       <div>
         <div className="mb-2">
-          <Link
-            to={item.slug}
-            className="text-xs font-semibold tracking-wide uppercase transition-colors duration-200 text-blue-400 hover:text-blue-900 dark:text-[#0E8388]"
-            aria-label="Category"
+          <span
+            className="text-xs font-semibold tracking-wide uppercase transition-colors duration-200 text-blue-400 hover:text-blue-900 dark:text-[#0E8388]"  
           >
             Javascript
-          </Link>
+          </span>
         </div>
         <div className="mb-2">
           <Link
-            to={item.slug}
+            to={`/${item.slug}`}
             aria-label="Article"
             className="inline-block text-lg lg:text-2xl font-bold  leading-5 lg:leading-8 text-black transition-colors duration-200 hover:text-blue-900 dark:text-textDark"
           >

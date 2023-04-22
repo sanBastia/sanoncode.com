@@ -1,7 +1,7 @@
 import { hydrate } from 'react-dom'
 import { RemixBrowser } from "@remix-run/react";
 
-import { splitbee } from './lib'
+import { splitbee } from './libs'
 
 hydrate(<RemixBrowser />, document)
 

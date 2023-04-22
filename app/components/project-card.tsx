@@ -11,7 +11,7 @@ export const ProjectCard: FunctionComponent<ProjectCardProps> = () => {
         title="Projects"
         excerpt="Things that i build and maintain some of them until now"
       />
-      <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-lg md:px-24 lg:px-8 lg:py-4 ">
+      <div className="px-4 p-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-lg md:px-24 lg:px-8 lg:py-4 ">
         <div className="grid gap-8 row-gap-5 lg:grid-cols-3">
           <div className="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
             <img

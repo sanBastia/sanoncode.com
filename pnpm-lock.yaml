@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@balavishnuvj/remix-seo':
+    specifier: ^1.0.2
+    version: 1.0.2(@remix-run/react@1.14.3)(@remix-run/server-runtime@1.14.3)
   '@markdoc/markdoc':
     specifier: ^0.2.2
     version: 0.2.2(@types/react@18.0.30)(react@18.2.0)
@@ -1286,6 +1289,17 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: true
+
+  /@balavishnuvj/remix-seo@1.0.2(@remix-run/react@1.14.3)(@remix-run/server-runtime@1.14.3):
+    resolution: {integrity: sha512-uSG0bc8ex0wj+RSO/hhtI/9BK7WlopYtIyrCR9A5GtwPyodNelR2ZRKg1PmyfSEndVgPIUFvpmCKT8GLZQbrYw==}
+    peerDependencies:
+      '@remix-run/react': ^1.0.0
+      '@remix-run/server-runtime': ^1.0.0
+    dependencies:
+      '@remix-run/react': 1.14.3(react-dom@18.2.0)(react@18.2.0)
+      '@remix-run/server-runtime': 1.14.3
+      lodash: 4.17.21
+    dev: false
 
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -4358,7 +4372,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}

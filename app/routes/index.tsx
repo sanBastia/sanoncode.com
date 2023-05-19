@@ -5,6 +5,7 @@ import { ArticleCard, Hero, ProjectCard, SubHeading } from '~/components'
 import { Articles } from '~/types'
 import { gql } from '@urql/core'
 import { graphcmsClient } from '~/libs'
+import { SEOHandle } from "@balavishnuvj/remix-seo";
 
 type IndexData = Articles
 
@@ -40,6 +41,12 @@ export const meta: MetaFunction = () => {
     title: 'Hi, I am San Sebastian',
     description: 'San Sebastian personal website',
   }
+}
+//https://github.com/balavishnuvj/remix-seo
+export const handle: SEOHandle = {
+  getSitemapEntries: async () => {
+    return [{ route: `/`, priority: 1 }]
+  },
 }
 
 // https://remix.run/guides/routing#index-routes

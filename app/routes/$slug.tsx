@@ -6,6 +6,7 @@ import { graphcmsClient, markdocParseTransform } from '~/libs'
 import { Article } from '~/types'
 import { RenderableTreeNode } from '@markdoc/markdoc'
 import { Coffee, CalendarDays } from 'lucide-react'
+import { SEOHandle } from "@balavishnuvj/remix-seo";
 
 type ArticleSlugData = {
   article: Article
@@ -23,6 +24,31 @@ export const meta: MetaFunction = ({
     title: articleTitle,
     description: articleDesc,
   }
+}
+
+export const handle: SEOHandle = {
+  getSitemapEntries: async (request) => {
+    const allArticlesQuery = gql`
+    query AllArticles {
+      articles(orderBy: createdAt_DESC) {
+        id
+        slug
+        title
+        date
+        readTime
+        excerpt
+        body
+      }
+    }
+  `
+
+  const response = await graphcmsClient.query(allArticlesQuery,{}).toPromise()
+  const articles = response.data.articles
+
+    return articles.map((article: { slug: any })=>{
+      return { route:`/${article.slug}`, priority: 0.7}
+    })
+  },
 }
 
 export const loader: LoaderFunction = async ({ params }) => {

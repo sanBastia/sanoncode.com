@@ -10,6 +10,7 @@
     "dev:css": "tailwindcss -w -i ./styles/input.css -o app/styles/output.css"
   },
   "dependencies": {
+    "@balavishnuvj/remix-seo": "^1.0.2",
     "@markdoc/markdoc": "^0.2.2",
     "@remix-run/node": "^1.14.3",
     "@remix-run/react": "^1.14.3",

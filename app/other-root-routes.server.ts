@@ -15,7 +15,8 @@ export const otherRootRoutes: Record<string, Handler> = {
       "/robots.txt": async () => {
         return generateRobotsTxt([
           { type: "sitemap", value: "https://sanoncode.com/sitemap.xml" },
-          { type: "disallow", value: "/admin" },
+          { type:'userAgent', value: '*'},
+          { type: 'allow', value: '/'},
         ]);
       },
 };
